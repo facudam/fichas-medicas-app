@@ -1,21 +1,22 @@
-import '../UI styles/BodyApp.css';
+import { Link } from 'react-router-dom';
+import '../UI styles/Sidebar.css';
 
 
 export const Sidebar = () => {
   return (
-    <div className="sidebar">
-        <div className='link'>
-            <img src='https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-person-256.png' />
-            <a href="#">Pacientes</a>
-        </div>
-
-        <div className='link'>
-        <img src='https://cdn0.iconfinder.com/data/icons/mobile-basic-vol-1/32/Circle_Plus-256.png' />
-            <a href="#">Ingresar nuevo</a>
-        </div>
+    <nav className="sidebar">
+        <Link className='link' to="/">
+          <img src='/imagesUI/persona.png' alt='persona boton'/>
+          Pacientes
+        </Link>
         
-        
-    </div>
+        <Link className='link' to="/agregar-paciente">
+          <img src='/imagesUI/add.png' alt='agregar persona'/>
+          Ingresar nuevo
+        </Link>
+      
+           
+    </nav>
   )
 }
 
