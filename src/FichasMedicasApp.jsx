@@ -1,4 +1,5 @@
 import { Routes, Route, Navigate } from 'react-router-dom';
+import { ContextProvider } from './context/ContextProvider';
 import { Header } from './UI/Header';
 import { AddNewPacient } from './UI/mainbar pages/AddNewPacient';
 import { Pacients } from './UI/mainbar pages/Pacients';
@@ -6,7 +7,7 @@ import { Sidebar } from './UI/Sidebar';
 
 export const FichasMedicasApp = () => {
   return (
-    <>
+    <ContextProvider>
       <Header />
 
       <div className='body-app'>
@@ -20,6 +21,6 @@ export const FichasMedicasApp = () => {
         </Routes>
       </div>
       
-    </>
+    </ContextProvider>
   )
 }
