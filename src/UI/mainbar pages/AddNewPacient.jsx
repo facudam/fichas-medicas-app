@@ -4,12 +4,14 @@ import '../../UI styles/AddNewPacient.css';
 
 export const AddNewPacient = () => {
 
-  const { river } = useContext(Context)
+  const { pacientes} = useContext(Context)
+
+  console.log(pacientes)
 
   return (
     <div className="add-page">
       AddNewPacient
-      <p>{ river }</p> 
+      
 
     </div>
   )

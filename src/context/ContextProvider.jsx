@@ -2,12 +2,14 @@ import { Context } from "./Context"
 
 
 export const ContextProvider = ({ children }) => {
+    
+    const pacientes = [];
 
-    let river = 'descendido'
+
 
 
     return(
-        <Context.Provider  value={{ river }} >
+        <Context.Provider  value={{ pacientes }} >
             { children }
         </Context.Provider>
     )

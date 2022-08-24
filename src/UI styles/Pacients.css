@@ -4,4 +4,15 @@
     padding: 25px;
 }
 
+.no-pacientes {
+    background-color: rgb(241, 6, 6);
+    padding: 10px;
+    text-align: center;
+    font-size: 18px;
+    color: #fff;
+    max-width: 1000px;
+    margin: auto;
+    border-radius: 5px;
+}
+
 
