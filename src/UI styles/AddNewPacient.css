@@ -3,3 +3,60 @@
     width: calc(100% - 255px);
     padding: 25px;
 }
+
+.add-page__paragraph {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    margin: 15px 0px 30px 0px;
+}
+
+.datos-personales-container {
+    width: 95%;
+    max-width: 700px;
+    margin: auto;
+    background-color: rgb(53, 170, 185);
+    padding: 25px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    color: #fff;
+    border-radius: 15px;
+    box-shadow: 7px 6px 7px 1px #808080;
+}
+
+label {
+    width: 95%;
+    font-size: 18px;
+    font-weight: bold;
+    margin: auto;
+    margin-bottom: 7px;
+}
+
+input {
+    width: 95%;
+    padding:  12px;
+    margin: auto;
+    margin-bottom: 25px;
+    border: none;
+    border-radius: 15px;
+    background-color: rgb(249, 248, 247);
+    
+}
+
+input:focus {
+    outline: none;
+}
+
+button {
+    margin: auto;
+    padding: 10px 25px;
+    border-radius: 5px;
+    cursor: pointer;
+    border: none;
+    font-size: 14px;
+    font-weight: bold;
+    background-color: #fff;
+    
+}
+
