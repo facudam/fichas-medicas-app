@@ -13,10 +13,10 @@
 
 .datos-personales-container {
     width: 95%;
-    max-width: 700px;
+    max-width: 650px;
     margin: auto;
     background-color: rgb(53, 170, 185);
-    padding: 25px;
+    padding: 40px 25px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
