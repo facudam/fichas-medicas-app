@@ -4,14 +4,17 @@ import '../../UI styles/Pacients.css';
 
 export const Pacients = () => {
 
-  const { pacientes } = useContext(Context);
+  const { state } = useContext(Context);
 
   return (
     <div className='pacientes-page'>
       {
-        ( pacientes.length === 0 )
+        ( state.pacientes.length === 0 )
           ? <p className='no-pacientes'>Aún no se ha ingresado ningún paciente al sistema</p>
-          : null
+          : state.pacientes.map( paciente => (
+            <li>{ paciente.nombre }</li>
+          ))
+
       }
     </div>
   )

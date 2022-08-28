@@ -1,40 +1,11 @@
-import { useContext, useState } from 'react';
+import { useContext } from 'react';
 import { Context } from '../../context/Context';
-import '../../UI styles/AddNewPacient.css';
+import '../../UI styles/AddNewPatient.css';
 
-export const AddNewPacient = () => {
+export const AddNewPatient = () => {
 
-  const { pacientes} = useContext(Context)
+  const {  addPatient, nombre, apellido, dni, edad, handleApellido, handleDni, handleEdad, handleName } = useContext(Context)
 
-  const [ nombre, setNombre ] = useState('');
-  const [ apellido, setApellido ] = useState('');
-  const [ dni, setDni ] = useState('');
-  const [ edad, setEdad ] = useState('');
-
-  const handleName = (e) => {
-    setNombre(e.target.value)
-  }
-
-  const handleApellido = (e) => {
-    setApellido(e.target.value)
-  }
-
-  const handleDni = (e) => {
-    setDni(e.target.value)
-    
-  }
-
-  const handleEdad = (e) => {
-    setEdad(e.target.value)
-  }
-
-  const onSubmit = (e) => {
-    e.preventDefault()
-  }
-
-  
-
-  
 
   return (
     <div className="add-page">
@@ -55,7 +26,7 @@ export const AddNewPacient = () => {
 
         <button 
           type='submit'
-          onClick={ onSubmit }
+          onClick={ addPatient }
         >Añadir</button>
       </form>
       
