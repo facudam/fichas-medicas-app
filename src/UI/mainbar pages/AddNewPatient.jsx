@@ -1,6 +1,7 @@
 import { useContext } from 'react';
 import { Context } from '../../context/Context';
 import '../../UI styles/AddNewPatient.css';
+import { ModalSuccess } from '../modales/ModalSuccess';
 
 export const AddNewPatient = () => {
 
@@ -29,6 +30,8 @@ export const AddNewPatient = () => {
           onClick={ addPatient }
         >Añadir</button>
       </form>
+
+      <ModalSuccess />
       
     </div>
   )

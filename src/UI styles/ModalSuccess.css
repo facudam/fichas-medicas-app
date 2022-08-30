@@ -1,0 +1,48 @@
+
+.modal-fondo {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, .6);
+    cursor: pointer;
+}
+
+.modal-success {
+    width: 90%;
+    max-width: 450px;
+    background-color: #fff;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 40px 25px;
+    border-radius: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    animation: modalMove .5s forwards;
+    cursor: pointer;
+}
+
+@keyframes modalMove {
+    0% {
+        top: -100%
+    }
+
+    100% {
+        top: 50%;
+    }
+}
+
+.modal-success img {
+    width: 130px;
+}
+
+.modal-success p {
+    font-size: 18px;
+    font-weight: bold;
+}
+

@@ -12,6 +12,7 @@ export const ContextProvider = ({ children }) => {
     const [ apellido, setApellido ] = useState('');
     const [ dni, setDni ] = useState('');
     const [ edad, setEdad ] = useState('');
+    const [ modalIsOpen, setModalIsOpen ] = useState(false);
 
    
 
@@ -52,12 +53,21 @@ export const ContextProvider = ({ children }) => {
     const addPatient = ( e ) => {
         e.preventDefault();
 
-        const newPatient = { nombre: nombre, apellido: apellido, dni: dni, edad: edad}
+        if ( nombre.trim().length > 1 && apellido.trim().length > 1 && dni.trim().length > 1 && edad.trim().length > 0 ) {
+            const newPatient = { nombre: nombre, apellido: apellido, dni: dni, edad: edad}
 
-        dispatch({
-            type: PatientActions.ADD_PATIENT,
-            payload: newPatient
-        })
+            dispatch({
+                type: PatientActions.ADD_PATIENT,
+                payload: newPatient
+            })
+            // Si posee todos los datos, entonces aparecerá el modal, sino no.
+            setModalIsOpen(true)
+
+        } else {
+            console.warn('DEBES INGRESAR TODOS LOS DATOS DEL PACIENTE')
+        }
+
+        
 
     }
 
@@ -66,7 +76,7 @@ export const ContextProvider = ({ children }) => {
 
 
     return(
-        <Context.Provider  value={{ state, addPatient, nombre, apellido, dni, edad, handleApellido, handleDni, handleEdad, handleName }} >
+        <Context.Provider  value={{ state, addPatient, nombre, apellido, dni, edad, handleApellido, handleDni, handleEdad, handleName, modalIsOpen, setModalIsOpen }} >
             { children }
         </Context.Provider>
     )
