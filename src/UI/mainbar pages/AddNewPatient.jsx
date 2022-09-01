@@ -1,6 +1,7 @@
 import { useContext } from 'react';
 import { Context } from '../../context/Context';
 import '../../UI styles/AddNewPatient.css';
+import { ModalError } from '../modales/ModalError';
 import { ModalSuccess } from '../modales/ModalSuccess';
 
 export const AddNewPatient = () => {
@@ -31,7 +32,8 @@ export const AddNewPatient = () => {
         >Añadir</button>
       </form>
 
-      <ModalSuccess />
+      <ModalSuccess mensaje={'¡Usuario añadido correctamente!'} />
+      <ModalError mensaje={'¡Error! Por favor completa todos los datos del paciente'} />
       
     </div>
   )

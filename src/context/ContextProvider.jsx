@@ -13,6 +13,7 @@ export const ContextProvider = ({ children }) => {
     const [ dni, setDni ] = useState('');
     const [ edad, setEdad ] = useState('');
     const [ modalIsOpen, setModalIsOpen ] = useState(false);
+    const [ errorModalIsOpen, setErrorModalIsOpen ] = useState(false)
 
    
 
@@ -65,6 +66,7 @@ export const ContextProvider = ({ children }) => {
 
         } else {
             console.warn('DEBES INGRESAR TODOS LOS DATOS DEL PACIENTE')
+            setErrorModalIsOpen(true);
         }
 
         
@@ -76,7 +78,7 @@ export const ContextProvider = ({ children }) => {
 
 
     return(
-        <Context.Provider  value={{ state, addPatient, nombre, apellido, dni, edad, handleApellido, handleDni, handleEdad, handleName, modalIsOpen, setModalIsOpen }} >
+        <Context.Provider  value={{ state, addPatient, nombre, apellido, dni, edad, handleApellido, handleDni, handleEdad, handleName, modalIsOpen, setModalIsOpen, errorModalIsOpen, setErrorModalIsOpen }} >
             { children }
         </Context.Provider>
     )
