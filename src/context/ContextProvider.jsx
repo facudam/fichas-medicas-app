@@ -42,8 +42,16 @@ export const ContextProvider = ({ children }) => {
 
     const patientsReducer = (state, action) => {
         switch (action.type) {
-            case PatientActions.ADD_PATIENT:
-                return { pacientes: [...state.pacientes, action.payload ]} ;
+            case PatientActions.ADD_PATIENT: {
+                const nuevoPaciente = action.payload;
+
+                const patientAllreadyAdded = state.pacientes.find(paciente => paciente.dni === nuevoPaciente.dni)
+
+                console.log(`Prueba: ${patientAllreadyAdded}`)
+
+                return patientAllreadyAdded
+                    ?  state
+                    : { pacientes: [...state.pacientes, action.payload ]}} 
             default:
                 return state;
             
