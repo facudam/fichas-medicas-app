@@ -50,12 +50,28 @@ export const ContextProvider = ({ children }) => {
         }
     }
 
+    const verifyDni = () => {
+        state.pacientes.find( paciente => paciente.dni === dni)
+        
+    }
+
+    
+
+    const verifyNewPatient = () => {
+        if ( state.pacientes.length === 0 && nombre.trim().length > 1 && apellido.trim().length > 1 && dni.trim().length > 1 && edad.trim().length > 0 ) {
+            return true;
+        }  
+         else if ( state.pacientes.length !== 0 && nombre.trim().length > 1 && apellido.trim().length > 1 && dni.trim().length > 1 && verifyDni(dni) === undefined ) {
+            return true
+        } else { return false }
+        
+    }
 
     const addPatient = ( e ) => {
         e.preventDefault();
 
-        if ( nombre.trim().length > 1 && apellido.trim().length > 1 && dni.trim().length > 1 && edad.trim().length > 0 ) {
-            const newPatient = { nombre: nombre, apellido: apellido, dni: dni, edad: edad}
+        if ( verifyNewPatient() ) {
+            const newPatient = { nombre: nombre, apellido: apellido, dni: dni, edad: edad }
 
             dispatch({
                 type: PatientActions.ADD_PATIENT,
@@ -74,9 +90,12 @@ export const ContextProvider = ({ children }) => {
     }
 
 
+
     const [ state, dispatch ] = useReducer( patientsReducer, initialState );
 
-
+console.log(`VerificarPaciente: ${verifyNewPatient()}, 
+        verificarDni: ${verifyDni()}
+        ${dni}`, typeof dni, typeof verifyDni(), state.pacientes )
     return(
         <Context.Provider  value={{ state, addPatient, nombre, apellido, dni, edad, handleApellido, handleDni, handleEdad, handleName, modalIsOpen, setModalIsOpen, errorModalIsOpen, setErrorModalIsOpen }} >
             { children }
