@@ -49,6 +49,8 @@ export const ContextProvider = ({ children }) => {
 
                 console.log(`Prueba: ${patientAllreadyAdded}`)
 
+                // Si patientAllReadyAdded es un objeto (o sea que ya se encuentra en el estado), que devuelva el estado como estaba. Sino que lo agregue:
+
                 return patientAllreadyAdded
                     ?  state
                     : { pacientes: [...state.pacientes, action.payload ]}} 
