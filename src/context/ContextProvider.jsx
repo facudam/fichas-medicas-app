@@ -38,7 +38,7 @@ export const ContextProvider = ({ children }) => {
 
     //Estado inicial del reducer:
     
-    const initialState = { pacientes: []};
+    const initialState = { pacientes: [{nombre: 'Santiago Ismael', apellido: 'Schiavi', dni: 34561298, edad: 23}]};
 
     const patientsReducer = (state, action) => {
         switch (action.type) {
