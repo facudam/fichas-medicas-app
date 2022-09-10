@@ -1,16 +1,19 @@
-import '../../UI styles/PatientFicha.css';
+import '../../UI styles/AddNewPatient.css';
 
-export const PatientFicha = ({ apellido, nombre }) => {
+export const PatientFicha = ({ apellido, nombre, dni }) => {
 
   return (
-    <div className='ficha-paciente'>
-        <div className="ficha-paciente__full-name">
-            <p>{ `${apellido}, ${nombre}` }</p>
-        </div>
-        <div className="ficha-paciente__button-container">
-            <button>Agregar consultas</button>
-            <button title="Eliminar paciente">x</button>
-        </div>
-    </div>
+    <tr className='tr-ficha'>
+      <td className='td-ficha'>
+        { dni }
+      </td>
+      <td className='td-ficha'>
+          { `${apellido}, ${nombre}` }
+      </td>
+      <td className='td-ficha'>
+          <button className='btn-ficha'>Agregar consultas</button>
+          <button className='btn-ficha-delete' title="Eliminar paciente">x</button>
+      </td>
+    </tr>
   )
 }

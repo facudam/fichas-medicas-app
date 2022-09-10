@@ -27,6 +27,7 @@ export const AddNewPatient = () => {
         <input type='number' value={ edad } onChange={ handleEdad } placeholder='Ingresa su edad' /> 
 
         <button 
+          className='button'
           type='submit'
           onClick={ addPatient }
         >Añadir</button>
