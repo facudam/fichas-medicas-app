@@ -2,6 +2,7 @@ import React, { useContext } from 'react'
 import { Context } from '../../context/Context';
 import '../../UI styles/Pacients.css';
 import { PatientFicha } from '../components/PatientFicha';
+import { PatientSearch } from '../components/PatientSearch';
 
 export const Pacients = () => {
 
@@ -9,6 +10,7 @@ export const Pacients = () => {
 
   return (
     <div className='pacientes-page'>
+      <PatientSearch />
       <table className='table-ficha'>
         <tr className={`tr-ficha tr-ficha-titles`}>
           <td className={`td-ficha td-ficha-title`}><strong>DNI</strong></td>

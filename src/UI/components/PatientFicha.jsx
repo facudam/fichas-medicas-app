@@ -10,7 +10,7 @@ export const PatientFicha = ({ apellido, nombre, dni }) => {
       <td className='td-ficha'>
           { `${apellido}, ${nombre}` }
       </td>
-      <td className='td-ficha'>
+      <td className={`td-ficha center`}>
           <button className='btn-ficha'>Agregar consultas</button>
           <button className='btn-ficha-delete' title="Eliminar paciente">x</button>
       </td>

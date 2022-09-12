@@ -14,17 +14,17 @@ export const AddNewPatient = () => {
       <p className='add-page__paragraph'>Ingrese los datos del nuevo paciente:</p>
 
       <form className='datos-personales-container'>
-        <label htmlFor='nombre'>Nombre: </label>
-        <input type='text' value={ nombre } onChange={ handleName } id='nombre' placeholder='Ingrese aquí los nombres' />
+        <label className='label' htmlFor='nombre'>Nombre: </label>
+        <input className='input' type='text' value={ nombre } onChange={ handleName } id='nombre' placeholder='Ingrese aquí los nombres' />
 
-        <label htmlFor='apellido'>Apellido: </label>
-        <input type='text' value={ apellido } onChange={ handleApellido } id='apellido' placeholder='Ingrese aquí el apellido' />
+        <label className='label' htmlFor='apellido'>Apellido: </label>
+        <input className='input' type='text' value={ apellido } onChange={ handleApellido } id='apellido' placeholder='Ingrese aquí el apellido' />
         
-        <label htmlFor='dni'>DNI: </label>
-        <input type='number' value={ dni } onChange={ handleDni } placeholder='Ingrese el número de documento' />
+        <label className='label' htmlFor='dni'>DNI: </label>
+        <input className='input' type='number' value={ dni } onChange={ handleDni } placeholder='Ingrese el número de documento' />
 
-        <label htmlFor='edad'>Edad: </label>
-        <input type='number' value={ edad } onChange={ handleEdad } placeholder='Ingresa su edad' /> 
+        <label className='label' htmlFor='edad'>Edad: </label>
+        <input className='input' type='number' value={ edad } onChange={ handleEdad } placeholder='Ingresa su edad' /> 
 
         <button 
           className='button'
