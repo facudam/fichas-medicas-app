@@ -7,7 +7,11 @@ export const PatientSearch = () => {
 
         <form className='search-form'>
             <input className='search-patient' type='search' placeholder='Buscar paciente'/>
-            <button type='submit' className='button-search'><img src='/imagesUI/lupa.svg' alt='buscar' /></button>
+            <button
+              type='submit' 
+              className='button-search'>
+              <img src='/imagesUI/lupa.svg' alt='buscar' />
+            </button>
             
         </form>
     </div>

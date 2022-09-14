@@ -54,6 +54,10 @@ export const ContextProvider = ({ children }) => {
                 return patientAllreadyAdded
                     ?  state
                     : { pacientes: [...state.pacientes, action.payload ]}} 
+            
+            case PatientActions.DELETE_PATIENT:
+                return state.pacientes.filter(paciente => paciente.dni !== action.payload)
+
             default:
                 return state;
             
@@ -65,6 +69,7 @@ export const ContextProvider = ({ children }) => {
         e.preventDefault();
 
         if ( nombre.trim().length > 1 && apellido.trim().length > 1 && dni.trim().length > 1 && edad.trim().length > 0 ) {
+            
             const newPatient = { nombre: nombre, apellido: apellido, dni: dni, edad: edad}
 
             dispatch({
@@ -73,6 +78,7 @@ export const ContextProvider = ({ children }) => {
             })
             // Si posee todos los datos, entonces aparecerá el modal, sino no.
             setModalIsOpen(true)
+            console.log(initialState)
 
         } else {
             console.warn('DEBES INGRESAR TODOS LOS DATOS DEL PACIENTE')
@@ -83,12 +89,21 @@ export const ContextProvider = ({ children }) => {
 
     }
 
+    function deletePatient() { 
+
+        dispatch({
+            type: PatientActions.DELETE_PATIENT,
+            payload: state.dni
+        })
+    }
+
 
     const [ state, dispatch ] = useReducer( patientsReducer, initialState );
 
+        console.log(state)
 
     return(
-        <Context.Provider  value={{ state, addPatient, nombre, apellido, dni, edad, handleApellido, handleDni, handleEdad, handleName, modalIsOpen, setModalIsOpen, errorModalIsOpen, setErrorModalIsOpen }} >
+        <Context.Provider  value={{ state, addPatient, nombre, apellido, dni, edad, handleApellido, handleDni, handleEdad, handleName, modalIsOpen, setModalIsOpen, errorModalIsOpen, setErrorModalIsOpen, deletePatient }} >
             { children }
         </Context.Provider>
     )

@@ -13,11 +13,11 @@ export const Pacients = () => {
       <PatientSearch />
       <table className='table-ficha'>
         <tr className={`tr-ficha tr-ficha-titles`}>
-          <td className={`td-ficha td-ficha-title`}><strong>DNI</strong></td>
-          <td className={`td-ficha td-ficha-title`}><strong>Nombre completo</strong></td>
+          <th className={`td-ficha td-ficha-title`}>DNI</th>
+          <th className={`td-ficha td-ficha-title`}>Nombre completo</th>
         </tr>
         {
-          ( state.pacientes.length > 0 )
+          ( state.pacientes.length > 0 || undefined )
             ? state.pacientes.map( paciente => (
               <PatientFicha key={ paciente.dni} apellido={ paciente.apellido } nombre={ paciente.nombre } dni={ paciente.dni }/>
             ))
