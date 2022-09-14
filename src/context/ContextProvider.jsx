@@ -38,14 +38,14 @@ export const ContextProvider = ({ children }) => {
 
     //Estado inicial del reducer:
     
-    const initialState = { pacientes: [{nombre: 'Santiago Ismael', apellido: 'Schiavi', dni: 34561298, edad: 23}]};
+    const initialState = [{nombre: 'Santiago Ismael', apellido: 'Schiavi', dni: 34561298, edad: 23}];
 
     const patientsReducer = (state, action) => {
         switch (action.type) {
             case PatientActions.ADD_PATIENT: {
                 const nuevoPaciente = action.payload;
 
-                const patientAllreadyAdded = state.pacientes.find(paciente => paciente.dni === nuevoPaciente.dni)
+                const patientAllreadyAdded = state.find(paciente => paciente.dni === nuevoPaciente.dni)
 
                 console.log(`Prueba: ${patientAllreadyAdded}`)
 
@@ -53,10 +53,10 @@ export const ContextProvider = ({ children }) => {
 
                 return patientAllreadyAdded
                     ?  state
-                    : { pacientes: [...state.pacientes, action.payload ]}} 
+                    :  [...state, action.payload ]} 
             
             case PatientActions.DELETE_PATIENT:
-                return state.pacientes.filter(paciente => paciente.dni !== action.payload)
+                return state.filter(paciente => paciente.dni !== action.payload.dni)
 
             default:
                 return state;
@@ -89,18 +89,17 @@ export const ContextProvider = ({ children }) => {
 
     }
 
-    function deletePatient() { 
-
+    function deletePatient(paciente) { 
         dispatch({
             type: PatientActions.DELETE_PATIENT,
-            payload: state.dni
-        })
+            payload: {dni: paciente.dni}
+        })  
     }
 
 
     const [ state, dispatch ] = useReducer( patientsReducer, initialState );
 
-        console.log(state)
+        
 
     return(
         <Context.Provider  value={{ state, addPatient, nombre, apellido, dni, edad, handleApellido, handleDni, handleEdad, handleName, modalIsOpen, setModalIsOpen, errorModalIsOpen, setErrorModalIsOpen, deletePatient }} >

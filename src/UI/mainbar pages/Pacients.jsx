@@ -17,9 +17,9 @@ export const Pacients = () => {
           <th className={`td-ficha td-ficha-title`}>Nombre completo</th>
         </tr>
         {
-          ( state.pacientes.length > 0 || undefined )
-            ? state.pacientes.map( paciente => (
-              <PatientFicha key={ paciente.dni} apellido={ paciente.apellido } nombre={ paciente.nombre } dni={ paciente.dni }/>
+          ( state.length > 0 )
+            ? state.map( paciente => (
+              <PatientFicha key={ paciente.dni} apellido={ paciente.apellido } nombre={ paciente.nombre } dni={ paciente.dni } paciente={paciente}/> //pasamos el paciente para poder identificarlo y eliminarlo
             ))
             : <p className='no-pacientes'>Aún no se ha ingresado ningún paciente al sistema</p>
 

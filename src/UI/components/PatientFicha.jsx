@@ -2,7 +2,7 @@ import { useContext } from 'react';
 import { Context } from '../../context/Context';
 import '../../UI styles/AddNewPatient.css';
 
-export const PatientFicha = ({ apellido, nombre, dni }) => {
+export const PatientFicha = ({ apellido, nombre, dni, paciente }) => {
 
   const { deletePatient } = useContext(Context)
 
@@ -17,7 +17,7 @@ export const PatientFicha = ({ apellido, nombre, dni }) => {
       <td className={`td-ficha center`}>
           <button className='btn-ficha'>Agregar consultas</button>
           <button
-            onClick={ deletePatient }
+            onClick={ () => deletePatient(paciente) }
             className='btn-ficha-delete' 
             title="Eliminar paciente">
             x
