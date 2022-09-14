@@ -47,8 +47,6 @@ export const ContextProvider = ({ children }) => {
 
                 const patientAllreadyAdded = state.find(paciente => paciente.dni === nuevoPaciente.dni)
 
-                console.log(`Prueba: ${patientAllreadyAdded}`)
-
                 // Si patientAllReadyAdded es un objeto (o sea que ya se encuentra en el estado), que devuelva el estado como estaba. Sino que lo agregue:
 
                 return patientAllreadyAdded
@@ -78,7 +76,12 @@ export const ContextProvider = ({ children }) => {
             })
             // Si posee todos los datos, entonces aparecerá el modal, sino no.
             setModalIsOpen(true)
-            console.log(initialState)
+            
+            //Reiniciar a vacio los inputs:
+            setApellido('')
+            setDni('')
+            setEdad('')
+            setNombre('')
 
         } else {
             console.warn('DEBES INGRESAR TODOS LOS DATOS DEL PACIENTE')
