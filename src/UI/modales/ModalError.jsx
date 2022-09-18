@@ -9,7 +9,7 @@ export const ModalError = ({ mensaje }) => {
 
     const { errorModalIsOpen, setErrorModalIsOpen } = useContext(Context)
 
-    if( !errorModalIsOpen ) return null
+    if( !errorModalIsOpen ) return;
 
   return ReactDOM.createPortal(
     <div onClick={ () => setErrorModalIsOpen(false) }>

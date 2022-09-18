@@ -1,7 +1,12 @@
+import { useContext } from 'react';
 import ReactDOM from 'react-dom';
+import { Context } from '../../context/Context';
 import '../../UI styles/Modal.css';
 
- export const AgregarConsultaMedica = () => {
+ export const AgregarConsultaMedica = ({ paciente='Facundo Cáceres' }) => {
+     const { addModalIsOpen } = useContext(Context)
+
+    if ( !addModalIsOpen ) return;
 
     return ReactDOM.createPortal(
         <div>
@@ -12,18 +17,20 @@ import '../../UI styles/Modal.css';
                     <button>x</button>
                 </div>
                 
-                <p>Paciente: Facundo Cáceres</p>
-                <form>
-                    <label>Fecha: </label>
-                    <input  type='datetime-local' />
-
-                    <label>Motivo o Padecimineto</label>
+                <p><strong>Paciente:</strong> { paciente }</p>
+                <form className='form-modal'>
+                    <div>
+                        <label>Fecha: </label>
+                        <input  type='datetime-local' />
+                    </div>
+                    
+                    <label>Motivo o Padecimiento:</label>
                     <textarea />
 
                     <label>Tratamiento y/o medicación: </label>
                     <textarea />
 
-                    <label>Notas adicionales</label>
+                    <label>Notas adicionales:</label>
                     <textarea />
 
                     <button type='submit'>Agregar nueva consulta</button>

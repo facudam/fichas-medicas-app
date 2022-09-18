@@ -9,7 +9,7 @@ export const ModalSuccess = ({ mensaje }) => {
 
     const { modalIsOpen, setModalIsOpen }  = useContext(Context)
 
-    if (!modalIsOpen) return null;
+    if (!modalIsOpen) return;
 
   return ReactDOM.createPortal(
     <div onClick={ () => setModalIsOpen(false)}>
