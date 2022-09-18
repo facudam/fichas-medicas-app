@@ -47,3 +47,52 @@
     text-align: center;
 }
 
+
+.fondo-agregar {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, .6);
+}
+
+.modal-agregar {
+    width: 95%;
+    max-width: 900px;
+    background-color: #fff;
+    position: fixed;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 25px;
+    
+
+}
+
+.flex-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.flex-container h2 {
+    text-align: center;
+    width: 100%;
+    padding-left: 40px;
+}
+
+.flex-container button {
+    padding: 10px;
+    height: 26px;
+    display: flex;
+    align-items: center;
+    border: none;
+    background-color: rgb(255, 0, 0);
+    color: #fff;
+    cursor: pointer;
+}
+
+.flex-container button:hover {
+    background-color: rgb(224, 11, 11);
+}
+

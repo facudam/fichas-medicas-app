@@ -3,8 +3,10 @@ import { Context } from '../../context/Context';
 import '../../UI styles/Pacients.css';
 import { PatientSearch } from '../components/PatientSearch';
 import { PatientTable } from '../components/PatientTable';
+import { AgregarConsultaMedica } from '../modales/AgregarConsultaMedica'
 
-export const Pacients = () => {
+
+export const Patients = () => {
 
   const { state } = useContext(Context);
 
@@ -18,6 +20,8 @@ export const Pacients = () => {
             : <p className='no-pacientes'>Aún no se ha ingresado ningún paciente al sistema</p>
 
         }
+
+        <AgregarConsultaMedica />
       
     </div>
   )
