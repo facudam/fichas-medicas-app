@@ -1,5 +1,7 @@
 import { useContext } from 'react';
 import { Context } from '../../context/Context';
+import { ConfirmationModal } from '../modales/ConfirmationModal';
+
 import '../../UI styles/AddNewPatient.css';
 
 export const PatientFicha = ({ apellido, nombre, dni, paciente }) => {
@@ -7,23 +9,27 @@ export const PatientFicha = ({ apellido, nombre, dni, paciente }) => {
   const { deletePatient } = useContext(Context)
 
   return (
-    <tr className='tr-ficha'>
-      <td className='td-ficha'>
-        { dni }
-      </td>
-      <td className='td-ficha'>
-          { `${apellido}, ${nombre}` }
-      </td>
-      <td className={`td-ficha center`}>
-      <button className='btn-verficha'>Ver fichas</button>
-          <button className='btn-ficha'>Agregar consultas</button>
-          <button
-            onClick={ () => deletePatient(paciente) }
-            className='btn-ficha-delete' 
-            title="Eliminar paciente">
-            x
-          </button>
-      </td>
-    </tr>
+    <>
+      <tr className='tr-ficha'>
+        <td className='td-ficha'>
+          { dni }
+        </td>
+        <td className='td-ficha'>
+            { `${apellido}, ${nombre}` }
+        </td>
+        <td className={`td-ficha center`}>
+        <button className='btn-verficha'>Ver fichas</button>
+            <button className='btn-ficha'>Agregar consultas</button>
+            <button
+              onClick={ () => deletePatient(paciente) }
+              className='btn-ficha-delete' 
+              title="Eliminar paciente">
+              x
+            </button>
+        </td>
+      </tr>
+
+      <ConfirmationModal paciente={ 'Santiago'}/>
+    </>
   )
 }

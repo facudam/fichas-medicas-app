@@ -133,3 +133,57 @@
     cursor: pointer;
     background-color: rgb(3, 110, 3);
 }
+
+/*  ++++++++++++ Confirmation modal +++++++++++  */
+
+.fondo-confirmation {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0; 
+    background-color: rgba(0, 0, 0, .2);
+}
+
+.confirmation-modal {
+    width: 350px;
+    position: fixed;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: beige;
+    padding: 15px;
+    border-radius: 5px;
+    animation: aparecer 1s forwards;
+}
+
+@keyframes aparecer {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.confirmation-modal p {
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.btn-container {
+    display: flex;
+    justify-content: center;
+    gap: 7px;
+    margin-top: 10px;
+}
+
+.btn-container button {
+    background-color: #fff;
+    padding: 3px 5px;
+    border: none;
+    border: 2px solid gray;
+    cursor: pointer;
+}
+
