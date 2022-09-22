@@ -15,13 +15,14 @@ export const PatientFicha = ({ apellido, nombre, dni, paciente }) => {
           { `${apellido}, ${nombre}` }
       </td>
       <td className={`td-ficha center`}>
+      <button className='btn-verficha'>Ver fichas</button>
           <button className='btn-ficha'>Agregar consultas</button>
           <button
             onClick={ () => deletePatient(paciente) }
             className='btn-ficha-delete' 
             title="Eliminar paciente">
             x
-            </button>
+          </button>
       </td>
     </tr>
   )

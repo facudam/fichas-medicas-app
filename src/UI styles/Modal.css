@@ -5,7 +5,7 @@
     bottom: 0;
     left: 0;
     right: 0;
-    background-color: rgba(3, 10, 49, 0.6);
+    background-color: rgba(53, 170, 185, .6);
     cursor: pointer;
 }
 
@@ -54,7 +54,7 @@
     bottom: 0;
     left: 0;
     right: 0;
-    background-color: rgba(4, 15, 77, 0.6);
+    background-color: rgba(53, 170, 185, .6);
 }
 
 .modal-agregar {
