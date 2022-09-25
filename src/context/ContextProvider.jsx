@@ -15,6 +15,7 @@ export const ContextProvider = ({ children }) => {
     const [ modalIsOpen, setModalIsOpen ] = useState(false);
     const [ errorModalIsOpen, setErrorModalIsOpen ] = useState(false)
     const [ addModalIsOpen, setAddModalIsOpen ] = useState(false); //Estado para el modal agregarConsulta.
+    const [ confirmationModalIsOpen, setConfirmationModalIsOpen ] = useState(false);
 
    
 
@@ -97,7 +98,8 @@ export const ContextProvider = ({ children }) => {
         dispatch({
             type: PatientActions.DELETE_PATIENT,
             payload: {dni: paciente.dni}
-        })  
+        })
+        setConfirmationModalIsOpen(false) 
     }
 
 
@@ -106,7 +108,7 @@ export const ContextProvider = ({ children }) => {
         
 
     return(
-        <Context.Provider  value={{ state, addPatient, nombre, apellido, dni, edad, handleApellido, handleDni, handleEdad, handleName, modalIsOpen, setModalIsOpen, errorModalIsOpen, setErrorModalIsOpen, deletePatient, addModalIsOpen, setAddModalIsOpen }} >
+        <Context.Provider  value={{ state, addPatient, nombre, apellido, dni, edad, handleApellido, handleDni, handleEdad, handleName, modalIsOpen, setModalIsOpen, errorModalIsOpen, setErrorModalIsOpen, deletePatient, addModalIsOpen, setAddModalIsOpen, confirmationModalIsOpen, setConfirmationModalIsOpen }} >
             { children }
         </Context.Provider>
     )
