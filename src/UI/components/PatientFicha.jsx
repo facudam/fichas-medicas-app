@@ -8,6 +8,11 @@ export const PatientFicha = ({ apellido, nombre, dni, paciente }) => {
 
   const { setConfirmationModalIsOpen } = useContext(Context)
 
+  const enviarDatos = (dni) => {
+    console.log(dni)
+    setConfirmationModalIsOpen(true)
+  }
+
   return (
 
   <> 
@@ -22,7 +27,7 @@ export const PatientFicha = ({ apellido, nombre, dni, paciente }) => {
       <button className='btn-verficha'>Ver fichas</button>
           <button className='btn-ficha'>Agregar consultas</button>
           <button
-            onClick={ () => setConfirmationModalIsOpen(true) }
+            onClick={ () => enviarDatos(dni) }
             className='btn-ficha-delete' 
             title="Eliminar paciente">
             x
@@ -30,7 +35,7 @@ export const PatientFicha = ({ apellido, nombre, dni, paciente }) => {
       </td>
     </tr> 
 
-    <ConfirmationModal paciente={paciente} nombrePaciente={ nombre }/>
+    <ConfirmationModal paciente={ paciente } nombrePaciente={ nombre }/>
   </> 
     
   )
