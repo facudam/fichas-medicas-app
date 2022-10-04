@@ -5,7 +5,7 @@ import { Context } from "../../context/Context";
 
 export const ConfirmationModal = ({ paciente, nombrePaciente }) => {
 
-    const { confirmationModalIsOpen, setConfirmationModalIsOpen, deletePatient, state } = useContext(Context);
+    const { confirmationModalIsOpen, setConfirmationModalIsOpen, deletePatient } = useContext(Context);
 
     if (!confirmationModalIsOpen) return
 
