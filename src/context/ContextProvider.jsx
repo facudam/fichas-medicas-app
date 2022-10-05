@@ -14,6 +14,8 @@ export const ContextProvider = ({ children }) => {
     const [ edad, setEdad ] = useState('');
     const [ modalIsOpen, setModalIsOpen ] = useState(false);
     const [ errorModalIsOpen, setErrorModalIsOpen ] = useState(false)
+    const [ addModalIsOpen, setAddModalIsOpen ] = useState(false); //Estado para el modal agregarConsulta.
+    const [ confirmationModalIsOpen, setConfirmationModalIsOpen ] = useState(false);
 
    
 
@@ -38,40 +40,40 @@ export const ContextProvider = ({ children }) => {
 
     //Estado inicial del reducer:
     
-    const initialState = { pacientes: []};
+    const initialState = [{nombre: 'Santiago Ismael', apellido: 'Schiavi', dni: 34561298, edad: 23}];
 
     const patientsReducer = (state, action) => {
         switch (action.type) {
-            case PatientActions.ADD_PATIENT:
-                return { pacientes: [...state.pacientes, action.payload ]} ;
+            case PatientActions.ADD_PATIENT: {
+                const nuevoPaciente = action.payload;
+
+                const patientAllreadyAdded = state.find(paciente => paciente.dni === nuevoPaciente.dni)
+
+                // Si patientAllReadyAdded es un objeto (o sea que ya se encuentra en el estado), que devuelva el estado como estaba. Sino que lo agregue:
+
+                return patientAllreadyAdded
+                    ?  state
+                    :  [...state, action.payload ]} 
+            
+            case PatientActions.DELETE_PATIENT:
+                return state.filter(paciente => paciente.dni !== action.payload.dni)
+
             default:
                 return state;
             
         }
     }
 
-    const verifyDni = () => {
-        state.pacientes.find( paciente => paciente.dni === dni)
-        
-    }
-
     
-
-    const verifyNewPatient = () => {
-        if ( state.pacientes.length === 0 && nombre.trim().length > 1 && apellido.trim().length > 1 && dni.trim().length > 1 && edad.trim().length > 0 ) {
-            return true;
-        }  
-         else if ( state.pacientes.length !== 0 && nombre.trim().length > 1 && apellido.trim().length > 1 && dni.trim().length > 1 && verifyDni(dni) === undefined ) {
-            return true
-        } else { return false }
-        
-    }
 
     const addPatient = ( e ) => {
         e.preventDefault();
 
-        if ( verifyNewPatient() ) {
-            const newPatient = { nombre: nombre, apellido: apellido, dni: dni, edad: edad }
+
+        if ( nombre.trim().length > 1 && apellido.trim().length > 1 && dni.trim().length > 1 && edad.trim().length > 0 ) {
+            
+            const newPatient = { nombre: nombre, apellido: apellido, dni: dni, edad: edad}
+
 
             dispatch({
                 type: PatientActions.ADD_PATIENT,
@@ -79,6 +81,12 @@ export const ContextProvider = ({ children }) => {
             })
             // Si posee todos los datos, entonces aparecerá el modal, sino no.
             setModalIsOpen(true)
+            
+            //Reiniciar a vacio los inputs:
+            setApellido('')
+            setDni('')
+            setEdad('')
+            setNombre('')
 
         } else {
             console.warn('DEBES INGRESAR TODOS LOS DATOS DEL PACIENTE')
@@ -89,15 +97,21 @@ export const ContextProvider = ({ children }) => {
 
     }
 
+    function deletePatient(paciente) { 
+        dispatch({
+            type: PatientActions.DELETE_PATIENT,
+            payload: {dni: paciente.dni}
+        })
+        setConfirmationModalIsOpen(false) 
+    }
+
 
 
     const [ state, dispatch ] = useReducer( patientsReducer, initialState );
 
-console.log(`VerificarPaciente: ${verifyNewPatient()}, 
-        verificarDni: ${verifyDni()}
-        ${dni}`, typeof dni, typeof verifyDni(), state.pacientes )
+
     return(
-        <Context.Provider  value={{ state, addPatient, nombre, apellido, dni, edad, handleApellido, handleDni, handleEdad, handleName, modalIsOpen, setModalIsOpen, errorModalIsOpen, setErrorModalIsOpen }} >
+        <Context.Provider  value={{ state, addPatient, nombre, apellido, dni, edad, handleApellido, handleDni, handleEdad, handleName, modalIsOpen, setModalIsOpen, errorModalIsOpen, setErrorModalIsOpen, deletePatient, addModalIsOpen, setAddModalIsOpen, confirmationModalIsOpen, setConfirmationModalIsOpen }} >
             { children }
         </Context.Provider>
     )

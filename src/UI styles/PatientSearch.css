@@ -1,0 +1,28 @@
+
+.search-title {
+    text-align: center;
+    margin-bottom: 15px;
+    
+}
+
+.search-form {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+
+.search-patient {
+    padding: 5px 10px;
+}
+
+.button-search {
+    border: 1px solid rgb(5, 5, 5);
+    padding: 5px 10px;
+}
+
+
+.button-search img {
+    width: 18px;
+    height: 15px;
+
+}
