@@ -16,6 +16,7 @@ export const ContextProvider = ({ children }) => {
     const [ errorModalIsOpen, setErrorModalIsOpen ] = useState(false)
     const [ addModalIsOpen, setAddModalIsOpen ] = useState(false); //Estado para el modal agregarConsulta.
     const [ confirmationModalIsOpen, setConfirmationModalIsOpen ] = useState(false);
+    const [ currentPatient, setCurrentPatient ] = useState([]);
 
    
 

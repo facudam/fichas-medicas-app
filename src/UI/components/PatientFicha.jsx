@@ -1,4 +1,4 @@
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 import { Context } from '../../context/Context';
 
 import '../../UI styles/AddNewPatient.css';
@@ -8,9 +8,11 @@ export const PatientFicha = ({ apellido, nombre, dni, paciente }) => {
 
   const { setConfirmationModalIsOpen } = useContext(Context)
 
-  const enviarDatos = (dni) => {
-    console.log(dni)
+  const [ currentPatient, setCurrentPatient ] = useState([])
+
+  const enviarDatos = (patient) => {
     setConfirmationModalIsOpen(true)
+    setCurrentPatient([patient])
   }
 
   return (
@@ -27,7 +29,7 @@ export const PatientFicha = ({ apellido, nombre, dni, paciente }) => {
       <button className='btn-verficha'>Ver fichas</button>
           <button className='btn-ficha'>Agregar consultas</button>
           <button
-            onClick={ () => enviarDatos(dni) }
+            onClick={ () => enviarDatos(paciente) }
             className='btn-ficha-delete' 
             title="Eliminar paciente">
             x
@@ -35,8 +37,17 @@ export const PatientFicha = ({ apellido, nombre, dni, paciente }) => {
       </td>
     </tr> 
 
-    <ConfirmationModal paciente={ paciente } nombrePaciente={ nombre }/>
-  </> 
+    {
+      (currentPatient.length < 1 )
+        ? console.log('')
+        : <ConfirmationModal paciente={ currentPatient[0] } nombrePaciente={ currentPatient[0].nombre }/>
+    }
+
+    
+  </>
+  
+  
     
   )
+  
 }
