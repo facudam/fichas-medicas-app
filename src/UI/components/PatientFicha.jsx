@@ -6,9 +6,8 @@ import { ConfirmationModal } from '../modales/ConfirmationModal';
 
 export const PatientFicha = ({ apellido, nombre, dni, paciente }) => {
 
-  const { setConfirmationModalIsOpen } = useContext(Context)
+  const { setConfirmationModalIsOpen, currentPatient, setCurrentPatient } = useContext(Context)
 
-  const [ currentPatient, setCurrentPatient ] = useState([])
 
   const enviarDatos = (patient) => {
     setConfirmationModalIsOpen(true)
