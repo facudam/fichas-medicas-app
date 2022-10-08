@@ -4,15 +4,22 @@ import { Context } from '../../context/Context';
 import '../../UI styles/AddNewPatient.css';
 import { ConfirmationModal } from '../modales/ConfirmationModal';
 
+
 export const PatientFicha = ({ apellido, nombre, dni, paciente }) => {
 
-  const { setConfirmationModalIsOpen, currentPatient, setCurrentPatient } = useContext(Context)
+  const { setConfirmationModalIsOpen, currentPatient, setCurrentPatient, addModalIsOpen, setAddModalIsOpen } = useContext(Context)
 
 
   const enviarDatos = (patient) => {
     setConfirmationModalIsOpen(true)
     setCurrentPatient([patient]);
   }
+
+  const abrirModalConsulta = () => {
+    setAddModalIsOpen(true);
+    console.log(addModalIsOpen)
+}
+
 
   return (
 
@@ -26,7 +33,12 @@ export const PatientFicha = ({ apellido, nombre, dni, paciente }) => {
       </td>
       <td className={`td-ficha center`}>
       <button className='btn-verficha'>Ver fichas</button>
-          <button className='btn-ficha'>Agregar consultas</button>
+          <button 
+            className='btn-ficha'
+            onClick={ abrirModalConsulta }
+            >
+            Agregar consultas
+          </button>
           <button
             onClick={ () => enviarDatos(paciente) }
             className='btn-ficha-delete' 

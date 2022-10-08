@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
 import { Context } from '../../context/Context';
 import '../../UI styles/Pacients.css';
 import { PatientSearch } from '../components/PatientSearch';
@@ -9,6 +9,8 @@ import { AgregarConsultaMedica } from '../modales/AgregarConsultaMedica'
 export const Patients = () => {
 
   const { state } = useContext(Context);
+
+  const [ addModalIsOpen, setAddModalIsOpen ] = useState(false);
 
   return (
     <div className='pacientes-page'>
@@ -21,7 +23,7 @@ export const Patients = () => {
 
         }
 
-        <AgregarConsultaMedica />
+      <AgregarConsultaMedica addModalIsOpen={ addModalIsOpen } setAddModalIsOpen={ setAddModalIsOpen }  />
       
     </div>
   )
