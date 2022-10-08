@@ -1,6 +1,6 @@
 
 import ReactDOM from 'react-dom';
-import { useContext, useState } from 'react';
+import { useContext } from 'react';
 import '../../UI styles/Modal.css';
 import { Context } from '../../context/Context';
 
@@ -16,7 +16,7 @@ import { Context } from '../../context/Context';
             <div className='modal-agregar'>
                 <div className='flex-container'>
                     <h2>Consulta médica</h2>
-                    <button onClick={ setAddModalIsOpen(false)}>x</button>
+                    <button onClick={ () => setAddModalIsOpen(false)}>x</button>
                 </div>
                 
                 <p><strong>Paciente:</strong> { paciente }</p>
