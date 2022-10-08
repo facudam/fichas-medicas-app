@@ -18,6 +18,12 @@ export const ContextProvider = ({ children }) => {
     const [ confirmationModalIsOpen, setConfirmationModalIsOpen ] = useState(false);
     const [ currentPatient, setCurrentPatient ] = useState([]);
 
+    // ------ estados para nueva consulta ------- //
+    const [ fecha, setFecha ] = useState()
+    const [ padecimiento, setPadecimiento ] = useState('')
+    const [ tratamiento, setTratamiento ] = useState('')
+    const [ notas, setNotas ] = useState('');
+
    
 
     //Declaramos las funciones con sus respectivos setState para tomar los datos ingresados:
@@ -41,7 +47,7 @@ export const ContextProvider = ({ children }) => {
 
     //Estado inicial del reducer:
     
-    const initialState = [{nombre: 'Santiago Ismael', apellido: 'Schiavi', dni: 34561298, edad: 23}];
+    const initialState = [{nombre: 'Santiago Ismael', apellido: 'Schiavi', dni: 34561298, edad: 23, consultas: []}];
 
     const patientsReducer = (state, action) => {
         switch (action.type) {
@@ -59,6 +65,11 @@ export const ContextProvider = ({ children }) => {
             case PatientActions.DELETE_PATIENT:
                 return state.filter(paciente => paciente.dni !== action.payload.dni)
 
+            case PatientActions.ADD_CONSULTA:
+                const pacienteConsulta = state.find(paciente => paciente.dni === action.payload.paciente.dni);
+
+                return pacienteConsulta.consultas.push(action.payload.nuevaConsulta)
+
             default:
                 return state;
             
@@ -73,7 +84,7 @@ export const ContextProvider = ({ children }) => {
 
         if ( nombre.trim().length > 1 && apellido.trim().length > 1 && dni.trim().length > 1 && edad.trim().length > 0 ) {
             
-            const newPatient = { nombre: nombre, apellido: apellido, dni: dni, edad: edad}
+            const newPatient = { nombre: nombre, apellido: apellido, dni: dni, edad: edad, consultas: []}
 
 
             dispatch({
@@ -106,6 +117,15 @@ export const ContextProvider = ({ children }) => {
         setConfirmationModalIsOpen(false) 
     }
 
+    function addConsulta(paciente) {
+        
+        const nuevaConsulta = { fecha: fecha, padecimiento: padecimiento, tratamiento: tratamiento, notas: notas }
+
+        dispatch({
+            type: PatientActions.ADD_CONSULTA,
+            payload: {paciente, nuevaConsulta}
+        })
+    }
 
 
     const [ state, dispatch ] = useReducer( patientsReducer, initialState );

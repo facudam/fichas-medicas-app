@@ -1,4 +1,4 @@
-import { useContext, useState } from 'react';
+import { useContext } from 'react';
 import { Context } from '../../context/Context';
 
 import '../../UI styles/AddNewPatient.css';
@@ -11,7 +11,7 @@ export const PatientFicha = ({ apellido, nombre, dni, paciente }) => {
 
   const enviarDatos = (patient) => {
     setConfirmationModalIsOpen(true)
-    setCurrentPatient([patient])
+    setCurrentPatient([patient]);
   }
 
   return (
@@ -38,7 +38,7 @@ export const PatientFicha = ({ apellido, nombre, dni, paciente }) => {
 
     {
       (currentPatient.length < 1 )
-        ? console.log('')
+        ? null
         : <ConfirmationModal paciente={ currentPatient[0] } nombrePaciente={ currentPatient[0].nombre }/>
     }
 
