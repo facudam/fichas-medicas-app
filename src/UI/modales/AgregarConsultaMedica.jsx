@@ -6,7 +6,7 @@ import { Context } from '../../context/Context';
 
  export const AgregarConsultaMedica = ({ paciente='Facundo Cáceres' }) => {
 
-    const { addModalIsOpen, setAddModalIsOpen } = useContext(Context)
+    const { addModalIsOpen, setAddModalIsOpen, fecha, padecimiento, tratamiento, notas, handleFecha, handlePadecimiento, handleTratamiento, handleNotas, addConsulta, currentPatient } = useContext(Context)
 
     if (!addModalIsOpen) return;
 
@@ -19,23 +19,25 @@ import { Context } from '../../context/Context';
                     <button onClick={ () => setAddModalIsOpen(false)}>x</button>
                 </div>
                 
-                <p><strong>Paciente:</strong> { paciente }</p>
+                <p><strong>Paciente:</strong> { currentPatient[0].nombre }</p>
                 <form className='form-modal'>
                     <div>
                         <label>Fecha: </label>
-                        <input  type='datetime-local' />
+                        <input  type='datetime-local' value={ fecha } onChange={ handleFecha } />
                     </div>
                     
                     <label>Motivo o Padecimiento:</label>
-                    <textarea />
+                    <textarea value={ padecimiento } onChange={ handlePadecimiento }/>
 
                     <label>Tratamiento y/o medicación: </label>
-                    <textarea />
+                    <textarea value={ tratamiento } onChange={ handleTratamiento } />
 
                     <label>Notas adicionales:</label>
-                    <textarea />
+                    <textarea value={ notas } onChange={ handleNotas }/>
 
-                    <button type='submit'>Agregar nueva consulta</button>
+                    <button type='submit'
+                        onClick={ addConsulta }
+                    >Agregar nueva consulta</button>
                 </form>
             </div>
         </div>,

@@ -15,6 +15,11 @@ export const PatientFicha = ({ apellido, nombre, dni, paciente }) => {
     setCurrentPatient([patient]);
   }
 
+  const openConsultaModal = (patient) => {
+    setAddModalIsOpen(true)
+    setCurrentPatient([patient])
+  }
+
 
   return (
 
@@ -30,7 +35,7 @@ export const PatientFicha = ({ apellido, nombre, dni, paciente }) => {
       <button className='btn-verficha'>Ver fichas</button>
           <button 
             className='btn-ficha'
-            onClick={ () => setAddModalIsOpen(true) }
+            onClick={ () =>  openConsultaModal(paciente)}
             >
             Agregar consultas
           </button>

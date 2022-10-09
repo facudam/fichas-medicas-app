@@ -20,7 +20,7 @@ export const ContextProvider = ({ children }) => {
     const [ currentPatient, setCurrentPatient ] = useState([]);
 
     // ------ estados para nueva consulta ------- //
-    const [ fecha, setFecha ] = useState()
+    const [ fecha, setFecha ] = useState('')
     const [ padecimiento, setPadecimiento ] = useState('')
     const [ tratamiento, setTratamiento ] = useState('')
     const [ notas, setNotas ] = useState('');
@@ -44,6 +44,25 @@ export const ContextProvider = ({ children }) => {
 
     const handleEdad = (e) => {
         setEdad(e.target.value)
+    }
+
+
+    // Declaramos las funciones con sus respectivos setState para tomar los datos de las consultas:
+
+    const handleFecha = (e) => {
+        setFecha(e.target.value)
+    }
+
+    const handlePadecimiento = (e) => {
+        setPadecimiento(e.target.value)
+    }
+
+    const handleTratamiento = (e) => {
+        setTratamiento(e.target.value)
+    }
+
+    const handleNotas = (e) => {
+        setNotas(e.target.value)
     }
 
     //Estado inicial del reducer:
@@ -118,14 +137,17 @@ export const ContextProvider = ({ children }) => {
         setConfirmationModalIsOpen(false) 
     }
 
-    function addConsulta(paciente) {
+    function addConsulta(e) {
+        e.preventDefault()
         
         const nuevaConsulta = { fecha: fecha, padecimiento: padecimiento, tratamiento: tratamiento, notas: notas }
 
-        dispatch({
+        /*dispatch({
             type: PatientActions.ADD_CONSULTA,
-            payload: {paciente, nuevaConsulta}
-        })
+            payload: {currentPatient, nuevaConsulta}
+        })*/
+
+        console.log(currentPatient, nuevaConsulta)
     }
 
 
@@ -133,7 +155,7 @@ export const ContextProvider = ({ children }) => {
 
 
     return(
-        <Context.Provider  value={{ state, addPatient, nombre, apellido, dni, edad, handleApellido, handleDni, handleEdad, handleName, modalIsOpen, setModalIsOpen, errorModalIsOpen, setErrorModalIsOpen, deletePatient, confirmationModalIsOpen, setConfirmationModalIsOpen, currentPatient, setCurrentPatient, addModalIsOpen, setAddModalIsOpen }} >
+        <Context.Provider  value={{ state, addPatient, nombre, apellido, dni, edad, handleApellido, handleDni, handleEdad, handleName, modalIsOpen, setModalIsOpen, errorModalIsOpen, setErrorModalIsOpen, deletePatient, confirmationModalIsOpen, setConfirmationModalIsOpen, currentPatient, setCurrentPatient, addModalIsOpen, setAddModalIsOpen, fecha, setFecha, padecimiento, setPadecimiento, tratamiento, setTratamiento, notas, setNotas, handleFecha, handlePadecimiento, handleTratamiento, handleNotas, addConsulta }} >
             { children }
         </Context.Provider>
     )
