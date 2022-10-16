@@ -92,15 +92,15 @@ export const ContextProvider = ({ children }) => {
                 const pacienteConsulta = action.payload;
                 const nuevaConsulta = { fecha: fecha, padecimiento: padecimiento, tratamiento: tratamiento, notas: notas }
                 
-                const nuevoEstado = state.map((paciente) => {
+                state.map((paciente) => {
                      if (paciente.id === pacienteConsulta.id) {
-                        paciente.consultas = [  ...paciente.consultas, nuevaConsulta   ]
+                        paciente.consultas = [ nuevaConsulta, ...paciente.consultas  ]
                     }
                     return paciente
                 })
 
-                return nuevoEstado
-                //pacienteConsulta.consultas.push(action.payload.nuevaConsulta)
+                return state
+                
 
             default:
                 return state;
@@ -116,7 +116,7 @@ export const ContextProvider = ({ children }) => {
 
         if ( nombre.trim().length > 1 && apellido.trim().length > 1 && dni.trim().length > 1 && edad.trim().length > 0 ) {
             
-            const newPatient = { nombre: nombre, apellido: apellido, dni: dni, edad: edad}
+            const newPatient = { nombre: nombre, apellido: apellido, dni: dni, edad: edad, consultas: []}
 
 
             dispatch({
