@@ -91,14 +91,13 @@ export const ContextProvider = ({ children }) => {
                 const pacienteConsulta = action.payload.currentPatient;
                 
                 
-                state.map((paciente) => {
-                     if (paciente.id === pacienteConsulta.id) {
-                        paciente.consultas = [ action.payload.nuevaConsulta, ...paciente.consultas  ]
-                    } else {
-                        return state
-                    }
+                state.map((paciente) => (
+                      (paciente.id === pacienteConsulta.id) 
+                        ?  paciente.consultas = [ action.payload.nuevaConsulta, ...paciente.consultas ]
+                        :  null
+                    )
 
-                })
+                )
 
                 return state
                 
