@@ -86,9 +86,21 @@ export const ContextProvider = ({ children }) => {
                 return state.filter(paciente => paciente.dni !== action.payload.dni)
 
             case PatientActions.ADD_CONSULTA:
-                const pacienteConsulta = state.find(paciente => paciente.dni === action.payload.paciente.dni);
+                //const pacienteConsulta = state.find(paciente => paciente.dni === //action.payload.paciente.dni);
+                console.log(action.payload)
 
-                return pacienteConsulta.consultas.push(action.payload.nuevaConsulta)
+                const pacienteConsulta = action.payload;
+                const nuevaConsulta = { fecha: fecha, padecimiento: padecimiento, tratamiento: tratamiento, notas: notas }
+                
+                const nuevoEstado = state.map((paciente) => {
+                     if (paciente.id === pacienteConsulta.id) {
+                        paciente.consultas = [  ...paciente.consultas, nuevaConsulta   ]
+                    }
+                    return paciente
+                })
+
+                return nuevoEstado
+                //pacienteConsulta.consultas.push(action.payload.nuevaConsulta)
 
             default:
                 return state;
@@ -104,7 +116,7 @@ export const ContextProvider = ({ children }) => {
 
         if ( nombre.trim().length > 1 && apellido.trim().length > 1 && dni.trim().length > 1 && edad.trim().length > 0 ) {
             
-            const newPatient = { nombre: nombre, apellido: apellido, dni: dni, edad: edad, consultas: []}
+            const newPatient = { nombre: nombre, apellido: apellido, dni: dni, edad: edad}
 
 
             dispatch({
@@ -139,15 +151,13 @@ export const ContextProvider = ({ children }) => {
 
     function addConsulta(e) {
         e.preventDefault()
-        
-        const nuevaConsulta = { fecha: fecha, padecimiento: padecimiento, tratamiento: tratamiento, notas: notas }
 
-        /*dispatch({
+        dispatch({
             type: PatientActions.ADD_CONSULTA,
-            payload: {currentPatient, nuevaConsulta}
-        })*/
+            payload: currentPatient
+        })
 
-        console.log(currentPatient, nuevaConsulta)
+        
     }
 
 
