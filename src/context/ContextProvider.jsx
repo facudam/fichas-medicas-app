@@ -86,17 +86,18 @@ export const ContextProvider = ({ children }) => {
                 return state.filter(paciente => paciente.dni !== action.payload.dni)
 
             case PatientActions.ADD_CONSULTA:
-                //const pacienteConsulta = state.find(paciente => paciente.dni === //action.payload.paciente.dni);
-                console.log(action.payload)
+                console.log(state)
 
-                const pacienteConsulta = action.payload;
-                const nuevaConsulta = { fecha: fecha, padecimiento: padecimiento, tratamiento: tratamiento, notas: notas }
+                const pacienteConsulta = action.payload.currentPatient;
+                
                 
                 state.map((paciente) => {
                      if (paciente.id === pacienteConsulta.id) {
-                        paciente.consultas = [ nuevaConsulta, ...paciente.consultas  ]
+                        paciente.consultas = [ action.payload.nuevaConsulta, ...paciente.consultas  ]
+                    } else {
+                        return state
                     }
-                    return paciente
+
                 })
 
                 return state
@@ -152,12 +153,18 @@ export const ContextProvider = ({ children }) => {
     function addConsulta(e) {
         e.preventDefault()
 
+        const nuevaConsulta = { fecha: fecha, padecimiento: padecimiento, tratamiento: tratamiento, notas: notas }
+
         dispatch({
             type: PatientActions.ADD_CONSULTA,
-            payload: currentPatient
+            payload: {currentPatient, nuevaConsulta}
         })
 
-        
+        setFecha('')
+        setPadecimiento('')
+        setTratamiento('')
+        setNotas('')
+        setAddModalIsOpen(false)
     }
 
 
