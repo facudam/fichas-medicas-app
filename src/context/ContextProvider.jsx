@@ -86,19 +86,15 @@ export const ContextProvider = ({ children }) => {
                 return state.filter(paciente => paciente.dni !== action.payload.dni)
 
             case PatientActions.ADD_CONSULTA:
-                console.log(state)
-
-                const pacienteConsulta = action.payload.currentPatient;
-                
                 
                 state.map((paciente) => (
-                      (paciente.id === pacienteConsulta.id) 
-                        ?  paciente.consultas = [ action.payload.nuevaConsulta, ...paciente.consultas ]
+                      (paciente.dni === currentPatient[0].dni) 
+                        ?  paciente.consultas = [ action.payload, ...paciente.consultas ]
                         :  null
                     )
 
                 )
-
+                console.log(state)
                 return state
                 
 
@@ -156,7 +152,7 @@ export const ContextProvider = ({ children }) => {
 
         dispatch({
             type: PatientActions.ADD_CONSULTA,
-            payload: {currentPatient, nuevaConsulta}
+            payload: nuevaConsulta
         })
 
         setFecha('')
