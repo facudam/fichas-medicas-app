@@ -19,11 +19,11 @@ import { Context } from '../../context/Context';
                     <button onClick={ () => setAddModalIsOpen(false)}>x</button>
                 </div>
                 
-                <p><strong>Paciente:</strong> { currentPatient[0].nombre }</p>
+                <p><strong>Paciente:</strong> { `${currentPatient[0].apellido}, ${currentPatient[0].nombre}` }</p>
                 <form className='form-modal'>
                     <div>
                         <label>Fecha: </label>
-                        <input  type='datetime-local' value={ fecha } onChange={ handleFecha } />
+                        <input  type='date' value={ fecha } onChange={ handleFecha } />
                     </div>
                     
                     <label>Motivo o Padecimiento:</label>
