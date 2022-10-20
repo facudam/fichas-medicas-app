@@ -6,7 +6,7 @@ import { ModalSuccess } from '../modales/ModalSuccess';
 
 export const AddNewPatient = () => {
 
-  const {  addPatient, nombre, apellido, dni, edad, handleApellido, handleDni, handleEdad, handleName, telefono, handleTelefono } = useContext(Context)
+  const {  addPatient, nombre, apellido, dni, edad, handleApellido, handleDni, handleEdad, handleName, telefono, handleTelefono, email, handleEmail } = useContext(Context)
 
 
   return (
@@ -28,6 +28,9 @@ export const AddNewPatient = () => {
 
         <label className='label' htmlFor='telefono'>Teléfono:</label>
         <input className='input' type='tel' value={ telefono } onChange={ handleTelefono } placeholder='Ingrese n° de teléfono' />
+
+        <label className='label' htmlFor='email'>E-mail:</label>
+        <input className='input' type='email' value={ email } onChange={ handleEmail } placeholder='Ingrese el correo electrónico' />
 
         <button 
           className='button'

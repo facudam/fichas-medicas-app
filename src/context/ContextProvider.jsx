@@ -6,13 +6,16 @@ import { Context } from "./Context"
 
 export const ContextProvider = ({ children }) => {
 
-    //Declaramos los estados para los datos personales de los nuevos pacientes:
+    // Declaramos los estados para los datos personales de los nuevos pacientes:
 
     const [ nombre, setNombre ] = useState('');
     const [ apellido, setApellido ] = useState('');
     const [ dni, setDni ] = useState('');
     const [ edad, setEdad ] = useState('');
     const [ telefono, setTelefono ] = useState('')
+    const [ email, setEmail ] = useState('')
+
+    // Estados para los modales.
     const [ modalIsOpen, setModalIsOpen ] = useState(false);
     const [ errorModalIsOpen, setErrorModalIsOpen ] = useState(false)
     const [ addModalIsOpen, setAddModalIsOpen ] = useState(false)
@@ -51,6 +54,10 @@ export const ContextProvider = ({ children }) => {
         setTelefono(e.target.value)
     }
 
+    const handleEmail = (e) => {
+        setEmail(e.target.value)
+    }
+
 
     // Declaramos las funciones con sus respectivos setState para tomar los datos de las consultas:
 
@@ -72,7 +79,7 @@ export const ContextProvider = ({ children }) => {
 
     //Estado inicial del reducer:
     
-    const initialState = [{nombre: 'Santiago Ismael', apellido: 'Schiavi', dni: 34561298, edad: 23, telefono: 1525455677, consultas: []}];
+    const initialState = [{nombre: 'Santiago Ismael', apellido: 'Schiavi', dni: 34561298, edad: 23, telefono: 1525455677, email: 'santiago_schiavi@gmail.com', consultas: []}];
 
     const patientsReducer = (state, action) => {
         switch (action.type) {
@@ -117,7 +124,7 @@ export const ContextProvider = ({ children }) => {
 
         if ( nombre.trim().length > 1 && apellido.trim().length > 1 && dni.trim().length > 1 && edad.trim().length > 0 ) {
             
-            const newPatient = { nombre: nombre, apellido: apellido, dni: dni, edad: edad, telefono: telefono, consultas: []}
+            const newPatient = { nombre: nombre, apellido: apellido, dni: dni, edad: edad, telefono: telefono, email: email, consultas: []}
 
 
             dispatch({
@@ -133,6 +140,7 @@ export const ContextProvider = ({ children }) => {
             setEdad('')
             setNombre('')
             setTelefono('')
+            setEmail('')
 
         } else {
             console.warn('DEBES INGRESAR TODOS LOS DATOS DEL PACIENTE')
@@ -173,7 +181,7 @@ export const ContextProvider = ({ children }) => {
 
 
     return(
-        <Context.Provider  value={{ state, addPatient, nombre, apellido, dni, edad, telefono, handleTelefono, handleApellido, handleDni, handleEdad, handleName, modalIsOpen, setModalIsOpen, errorModalIsOpen, setErrorModalIsOpen, deletePatient, confirmationModalIsOpen, setConfirmationModalIsOpen, currentPatient, setCurrentPatient, addModalIsOpen, setAddModalIsOpen, fecha, setFecha, padecimiento, setPadecimiento, tratamiento, setTratamiento, notas, setNotas, handleFecha, handlePadecimiento, handleTratamiento, handleNotas, addConsulta }} >
+        <Context.Provider  value={{ state, addPatient, nombre, apellido, dni, edad, telefono, email, handleTelefono, handleApellido, handleDni, handleEdad, handleName, handleEmail, modalIsOpen, setModalIsOpen, errorModalIsOpen, setErrorModalIsOpen, deletePatient, confirmationModalIsOpen, setConfirmationModalIsOpen, currentPatient, setCurrentPatient, addModalIsOpen, setAddModalIsOpen, fecha, padecimiento, setPadecimiento, tratamiento, setTratamiento, notas, setNotas, handleFecha, handlePadecimiento, handleTratamiento, handleNotas, addConsulta }} >
             { children }
         </Context.Provider>
     )
