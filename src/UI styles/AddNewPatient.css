@@ -102,11 +102,14 @@
 .btn-verficha {
     font-size: 15px;
     padding: 5px 10px;
-    border: none;
     background-color: rgb(9, 129, 129);
     border-radius: 5px;
     color: #fff;
     transition:  all .5s ease;
+    text-decoration: none;
+    text-align: center;
+    font-family: arial;
+    letter-spacing: 0;
 }
 
 .btn-verficha:hover {
@@ -124,6 +127,7 @@
     color: #fff;
     border-radius: 5px;
     transition: all .5s ease;
+    
 }
 
 .btn-ficha:hover {

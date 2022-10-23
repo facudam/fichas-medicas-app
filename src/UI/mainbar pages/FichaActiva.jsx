@@ -1,4 +1,5 @@
 import { useContext } from 'react';
+import { Link } from 'react-router-dom';
 import { Context } from '../../context/Context'
 import '../../UI styles/FichaActiva.css';
 import { Consulta } from '../components/Consulta';
@@ -36,6 +37,15 @@ export const FichaActiva = () => {
              : <p className='sin-consulta'>No hay consultas disponibles aún</p>
           }
         </div>
+
+        <div className='link-container'>
+          <Link
+            className='regresar'
+            to="/">Regresar a pacientes
+          </Link>
+        </div>
+
+        
     </div>
   )
 }
