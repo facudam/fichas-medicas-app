@@ -21,7 +21,7 @@ export const ContextProvider = ({ children }) => {
     const [ addModalIsOpen, setAddModalIsOpen ] = useState(false)
      //Estado para el modal agregarConsulta.
     const [ confirmationModalIsOpen, setConfirmationModalIsOpen ] = useState(false);
-    const [ currentPatient, setCurrentPatient ] = useState([]);
+    const [ currentPatient, setCurrentPatient ] = useState([{nombre: 'Santiago Ismael', apellido: 'Schiavi', dni: 34561298, edad: 23, telefono: 1525455677, email: 'santiago_schiavi@gmail.com', consultas: []}]);
 
     // ------ estados para nueva consulta ------- //
     const [ fecha, setFecha ] = useState('')
