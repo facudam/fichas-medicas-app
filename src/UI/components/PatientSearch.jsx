@@ -1,12 +1,22 @@
+import { useContext } from 'react';
+import { Context } from '../../context/Context';
 import '../../UI styles/PatientSearch.css';
 
 export const PatientSearch = () => {
+
+  const { filtrar, searchPatient } = useContext(Context)
   return (
     <div>
         <h1 className='search-title'>Lista de pacientes</h1>
 
         <form className='search-form'>
-            <input className='search-patient' type='search' placeholder='Buscar paciente'/>
+            <input
+              value={ filtrar }
+              onChange= { searchPatient }
+              className='search-patient'
+              type='search' 
+              placeholder='Buscar paciente'
+            />
             <button
               type='submit' 
               className='button-search'>

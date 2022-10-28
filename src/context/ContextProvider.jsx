@@ -29,6 +29,9 @@ export const ContextProvider = ({ children }) => {
     const [ tratamiento, setTratamiento ] = useState('')
     const [ notas, setNotas ] = useState('');
 
+    // ------ Estado del inputSearchPatient ------- //
+    const [filtrar, setFiltrar ] = useState('')
+
    
 
     //Declaramos las funciones con sus respectivos setState para tomar los datos ingresados:
@@ -75,6 +78,12 @@ export const ContextProvider = ({ children }) => {
 
     const handleNotas = (e) => {
         setNotas(e.target.value)
+    }
+
+
+    const searchPatient = (e) => {
+        e.preventDefault()
+        setFiltrar(e.target.value)
     }
 
     //Estado inicial del reducer:
@@ -181,7 +190,7 @@ export const ContextProvider = ({ children }) => {
 
 
     return(
-        <Context.Provider  value={{ state, addPatient, nombre, apellido, dni, edad, telefono, email, handleTelefono, handleApellido, handleDni, handleEdad, handleName, handleEmail, modalIsOpen, setModalIsOpen, errorModalIsOpen, setErrorModalIsOpen, deletePatient, confirmationModalIsOpen, setConfirmationModalIsOpen, currentPatient, setCurrentPatient, addModalIsOpen, setAddModalIsOpen, fecha, padecimiento, setPadecimiento, tratamiento, setTratamiento, notas, setNotas, handleFecha, handlePadecimiento, handleTratamiento, handleNotas, addConsulta }} >
+        <Context.Provider  value={{ state, addPatient, nombre, apellido, dni, edad, telefono, email, handleTelefono, handleApellido, handleDni, handleEdad, handleName, handleEmail, modalIsOpen, setModalIsOpen, errorModalIsOpen, setErrorModalIsOpen, deletePatient, confirmationModalIsOpen, setConfirmationModalIsOpen, currentPatient, setCurrentPatient, addModalIsOpen, setAddModalIsOpen, fecha, padecimiento, setPadecimiento, tratamiento, setTratamiento, notas, setNotas, handleFecha, handlePadecimiento, handleTratamiento, handleNotas, addConsulta, filtrar, setFiltrar, searchPatient }} >
             { children }
         </Context.Provider>
     )

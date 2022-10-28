@@ -2,9 +2,11 @@ import { useContext } from "react";
 import { Context } from "../../context/Context";
 import { PatientFicha } from "./PatientFicha";
 
- export const PatientTable = () => {
+ export const PatientTable = () => { 
 
-    const { state } = useContext(Context);
+    const { state, filtrar } = useContext(Context);
+
+    const pacientesFiltrados = state.filter(paciente => paciente.apellido.toLowerCase().includes(filtrar.toLowerCase()))
     return (
         <>
         <table className="table-ficha">
@@ -15,10 +17,11 @@ import { PatientFicha } from "./PatientFicha";
                 </tr>
 
                 {
-                    state.map( paciente => (
+                  
+                    pacientesFiltrados.map( paciente => ( 
                         <PatientFicha key={ paciente.dni} apellido={ paciente.apellido } nombre={ paciente.nombre } dni={ paciente.dni } paciente={ paciente }/> //pasamos el paciente para poder identificarlo y eliminarlo
-                    
-                    ))         
+                       
+                    ) )        
                 }
             </tbody>
         </table>
