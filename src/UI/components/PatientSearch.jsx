@@ -15,13 +15,11 @@ export const PatientSearch = () => {
               onChange= { searchPatient }
               className='search-patient'
               type='search' 
-              placeholder='Buscar paciente'
+              placeholder='Buscar por nombre o apellido'
             />
-            <button
-              type='submit' 
-              className='button-search'>
+            <div className='container-search'>
               <img src='/imagesUI/lupa.svg' alt='buscar' />
-            </button>
+            </div>
             
         </form>
     </div>

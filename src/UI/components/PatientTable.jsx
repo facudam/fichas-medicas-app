@@ -6,7 +6,7 @@ import { PatientFicha } from "./PatientFicha";
 
     const { state, filtrar } = useContext(Context);
 
-    const pacientesFiltrados = state.filter(paciente => paciente.apellido.toLowerCase().includes(filtrar.toLowerCase()))
+    const pacientesFiltrados = state.filter(paciente => paciente.apellido.toLowerCase().includes(filtrar.toLowerCase()) || paciente.nombre.toLowerCase().includes(filtrar.toLowerCase()) )
     return (
         <>
         <table className="table-ficha">
