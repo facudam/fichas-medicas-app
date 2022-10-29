@@ -29,6 +29,7 @@ export const FichaActiva = () => {
             (currentPatient[0].consultas.length > 0 )
              ? currentPatient[0].consultas.map(consulta => (
                <Consulta 
+                key={ currentPatient[0].dni }
                 fecha={ consulta.fecha }
                 padecimiento={ consulta.padecimiento }
                 tratamiento={ consulta.tratamiento }
