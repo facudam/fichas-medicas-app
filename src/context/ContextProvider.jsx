@@ -32,7 +32,8 @@ export const ContextProvider = ({ children }) => {
     // ------ Estado del inputSearchPatient ------- //
     const [filtrar, setFiltrar ] = useState('')
 
-   
+    let mensajePacienteYaAgregado = 'El dni que se introdujo ya corresponde a un paciente en el sistema';
+
 
     //Declaramos las funciones con sus respectivos setState para tomar los datos ingresados:
 
@@ -99,9 +100,15 @@ export const ContextProvider = ({ children }) => {
 
                 // Si patientAllReadyAdded es un objeto (o sea que ya se encuentra en el estado), que devuelva el estado como estaba. Sino que lo agregue:
 
-                return patientAllreadyAdded
-                    ?  state
-                    :  [...state, action.payload ]} 
+               if (patientAllreadyAdded) {
+                   setErrorModalIsOpen(true)
+                } else {
+                    // Si posee todos los datos, entonces aparecerá el modal, sino no.
+                    setModalIsOpen(true)
+                    return [...state, nuevoPaciente ] }
+                      
+                return state }
+
             
             case PatientActions.DELETE_PATIENT:
                 return state.filter(paciente => paciente.dni !== action.payload.dni)
@@ -130,18 +137,15 @@ export const ContextProvider = ({ children }) => {
     const addPatient = ( e ) => {
         e.preventDefault();
 
+        const newPatient = { nombre: nombre, apellido: apellido, dni: dni, edad: edad, telefono: telefono, email: email, consultas: []}
 
         if ( nombre.trim().length > 1 && apellido.trim().length > 1 && dni.trim().length > 1 && edad.trim().length > 0 ) {
             
-            const newPatient = { nombre: nombre, apellido: apellido, dni: dni, edad: edad, telefono: telefono, email: email, consultas: []}
-
 
             dispatch({
                 type: PatientActions.ADD_PATIENT,
                 payload: newPatient
             })
-            // Si posee todos los datos, entonces aparecerá el modal, sino no.
-            setModalIsOpen(true)
             
             //Reiniciar a vacio los inputs:
             setApellido('')
@@ -153,10 +157,9 @@ export const ContextProvider = ({ children }) => {
 
         } else {
             console.warn('DEBES INGRESAR TODOS LOS DATOS DEL PACIENTE')
+            mensajePacienteYaAgregado = 'Debes ingresar todos los datos obligatorios'
             setErrorModalIsOpen(true);
         }
-
-        
 
     }
 
@@ -190,7 +193,7 @@ export const ContextProvider = ({ children }) => {
 
 
     return(
-        <Context.Provider  value={{ state, addPatient, nombre, apellido, dni, edad, telefono, email, handleTelefono, handleApellido, handleDni, handleEdad, handleName, handleEmail, modalIsOpen, setModalIsOpen, errorModalIsOpen, setErrorModalIsOpen, deletePatient, confirmationModalIsOpen, setConfirmationModalIsOpen, currentPatient, setCurrentPatient, addModalIsOpen, setAddModalIsOpen, fecha, padecimiento, setPadecimiento, tratamiento, setTratamiento, notas, setNotas, handleFecha, handlePadecimiento, handleTratamiento, handleNotas, addConsulta, filtrar, setFiltrar, searchPatient }} >
+        <Context.Provider  value={{ state, addPatient, nombre, apellido, dni, edad, telefono, email, handleTelefono, handleApellido, handleDni, handleEdad, handleName, handleEmail, modalIsOpen, setModalIsOpen, errorModalIsOpen, setErrorModalIsOpen, deletePatient, confirmationModalIsOpen, setConfirmationModalIsOpen, currentPatient, setCurrentPatient, addModalIsOpen, setAddModalIsOpen, fecha, padecimiento, setPadecimiento, tratamiento, setTratamiento, notas, setNotas, handleFecha, handlePadecimiento, handleTratamiento, handleNotas, addConsulta, filtrar, setFiltrar, searchPatient, mensajePacienteYaAgregado }} >
             { children }
         </Context.Provider>
     )
