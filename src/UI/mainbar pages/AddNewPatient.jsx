@@ -39,7 +39,7 @@ export const AddNewPatient = () => {
         >Añadir</button>
       </form>
 
-      <ModalSuccess mensaje={'¡Usuario añadido correctamente!'} />
+      <ModalSuccess mensaje={'¡Paciente añadido correctamente!'} />
       <ModalError />
       
       

@@ -32,7 +32,9 @@ export const ContextProvider = ({ children }) => {
     // ------ Estado del inputSearchPatient ------- //
     const [filtrar, setFiltrar ] = useState('')
 
-    let mensajePacienteYaAgregado = 'El dni que se introdujo ya corresponde a un paciente en el sistema';
+    const [ mensajeModal, setMensajeModal ] = useState('')
+
+    
 
 
     //Declaramos las funciones con sus respectivos setState para tomar los datos ingresados:
@@ -101,6 +103,7 @@ export const ContextProvider = ({ children }) => {
                 // Si patientAllReadyAdded es un objeto (o sea que ya se encuentra en el estado), que devuelva el estado como estaba. Sino que lo agregue:
 
                if (patientAllreadyAdded) {
+                   setMensajeModal('El dni que se introdujo ya corresponde a un paciente en el sistema')
                    setErrorModalIsOpen(true)
                 } else {
                     // Si posee todos los datos, entonces aparecerá el modal, sino no.
@@ -157,7 +160,7 @@ export const ContextProvider = ({ children }) => {
 
         } else {
             console.warn('DEBES INGRESAR TODOS LOS DATOS DEL PACIENTE')
-            mensajePacienteYaAgregado = 'Debes ingresar todos los datos obligatorios'
+            setMensajeModal('Debes ingresar todos los datos obligatorios')
             setErrorModalIsOpen(true);
         }
 
@@ -193,7 +196,7 @@ export const ContextProvider = ({ children }) => {
 
 
     return(
-        <Context.Provider  value={{ state, addPatient, nombre, apellido, dni, edad, telefono, email, handleTelefono, handleApellido, handleDni, handleEdad, handleName, handleEmail, modalIsOpen, setModalIsOpen, errorModalIsOpen, setErrorModalIsOpen, deletePatient, confirmationModalIsOpen, setConfirmationModalIsOpen, currentPatient, setCurrentPatient, addModalIsOpen, setAddModalIsOpen, fecha, padecimiento, setPadecimiento, tratamiento, setTratamiento, notas, setNotas, handleFecha, handlePadecimiento, handleTratamiento, handleNotas, addConsulta, filtrar, setFiltrar, searchPatient, mensajePacienteYaAgregado }} >
+        <Context.Provider  value={{ state, addPatient, nombre, apellido, dni, edad, telefono, email, handleTelefono, handleApellido, handleDni, handleEdad, handleName, handleEmail, modalIsOpen, setModalIsOpen, errorModalIsOpen, setErrorModalIsOpen, deletePatient, confirmationModalIsOpen, setConfirmationModalIsOpen, currentPatient, setCurrentPatient, addModalIsOpen, setAddModalIsOpen, fecha, padecimiento, setPadecimiento, tratamiento, setTratamiento, notas, setNotas, handleFecha, handlePadecimiento, handleTratamiento, handleNotas, addConsulta, filtrar, setFiltrar, searchPatient, mensajeModal }} >
             { children }
         </Context.Provider>
     )

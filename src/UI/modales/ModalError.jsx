@@ -7,7 +7,7 @@ import '../../UI styles/Modal.css';
 
 export const ModalError = () => {
 
-    const { errorModalIsOpen, setErrorModalIsOpen, mensajePacienteYaAgregado } = useContext(Context)
+    const { errorModalIsOpen, setErrorModalIsOpen, mensajeModal } = useContext(Context)
 
     if( !errorModalIsOpen ) return;
 
@@ -16,7 +16,7 @@ export const ModalError = () => {
         <div className="modal-fondo"></div>
         <div className="modal">
             <img className="animate__heartBeat" src="imagesUI/error.svg" alt="error" />
-            <p className="modal-p">{ mensajePacienteYaAgregado }</p>
+            <p className="modal-p">{ mensajeModal }</p>
         </div>
     </div>,
     document.getElementById('portal')

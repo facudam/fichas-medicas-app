@@ -33,7 +33,7 @@ export const PatientFicha = ({ apellido, nombre, dni, paciente }) => {
           { `${apellido}, ${nombre}` }
       </td>
       <td className={`td-ficha center`}>
-          <Link className='btn-verficha' to="/ficha-activa" onClick={() => setCurrentPatient([paciente])}>Ver ficha completa</Link>
+          <Link className='btn-verficha' to="/ficha-activa" onClick={() => setCurrentPatient([paciente])}>Ver ficha médica</Link>
           <button 
             className='btn-ficha'
             onClick={ () =>  openConsultaModal(paciente)}
