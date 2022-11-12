@@ -29,7 +29,20 @@
     color: rgb(255, 255, 255);
 }
 
-@media  screen and (max-width: 900px ) {
+@media  screen and (max-width: 800px ) {
+    .sidebar {
+        flex-direction: row;
+        padding: 0px;
+        justify-content: center;
+    }
+
+    .link:hover {
+        background-color: rgb(249, 248, 247);
+        color: #000;
+    }
+}
+
+@media screen and (max-height: 800px) {
     .sidebar {
         flex-direction: row;
         padding: 0px;
