@@ -13,5 +13,23 @@ body {
 }
 
 .body-app {
-  display: flex;
+  display: grid;
+  grid-template-columns: 255px 1fr;
+  grid-template-rows: calc(100vh - 74px );
+}
+
+@media  screen and (max-width: 900px ) {
+
+  .body-app {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto
+  }
+  
+}
+
+@media screen and (max-height: 900px) {
+  .body-app {
+    grid-template-rows: auto;
+  }
+  
 }
