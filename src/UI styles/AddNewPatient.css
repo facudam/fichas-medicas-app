@@ -1,7 +1,9 @@
 
 .add-page {
     grid-area: main;
-    padding: 25px;
+    padding: 55px 0px;
+    outline: 1px solid rgb(237, 238, 239);
+    
 }
 
 .add-page__paragraph {
@@ -15,7 +17,7 @@
     width: 95%;
     max-width: 650px;
     margin: auto;
-    background-color: rgb(53, 170, 185);
+    background-color: rgb(0, 170, 185);
     padding: 40px 25px;
     display: flex;
     flex-wrap: wrap;
@@ -100,10 +102,10 @@
 
 .center {
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
-    gap: 7px;
     flex-wrap: wrap;
+    padding: 5px 0px;
 }
 
 .btn-verficha {

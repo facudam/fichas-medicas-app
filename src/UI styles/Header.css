@@ -1,31 +1,36 @@
 
 header {
     width: 100%;
-    padding: 15px 35px;
-    box-shadow: 0px 1px 5px 0px #9b9ea1;
-    background-color: rgb(249, 248, 247);
+    padding: 0px 35px;
+    /*box-shadow: 0px 1px 5px 0px #9b9ea1;*/
+    background-color: rgb(243, 244, 245);
     grid-area: header;
+    display: flex;
 }
 
 .header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    font-family: cursive;
 }
 
 .header__logo-container {
     display: flex;
     align-items: center;
     gap: 15px;
+    height: 100%;  
 }
 
-.header__span-name {
-    font-size: 19px;
+
+.header__div-name {
+    font-size: 17px;
+    font-weight: 900;
     
 }
 
-.header__img {
-    width: 40px;
+.header__div-name span {
+    color: rgb(255, 10, 10);
 }
 
 nav ul {
