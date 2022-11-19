@@ -1,7 +1,7 @@
 
 .add-page {
-    padding: 25px;
     grid-area: main;
+    padding: 25px;
 }
 
 .add-page__paragraph {
@@ -48,6 +48,10 @@
     outline: none;
 }
 
+.obligatorio {
+    color: rgb(235, 10, 10);
+}
+
 .button {
     margin: auto;
     padding: 10px 25px;
@@ -67,7 +71,7 @@
 
 .table-ficha {
     margin: auto;
-    width: 95%;
+    width: 100%;
     max-width: 950px;
     padding: 10px 15px;
     background-color: rgb(249, 248, 247);
@@ -99,6 +103,7 @@
     justify-content: center;
     align-items: center;
     gap: 7px;
+    flex-wrap: wrap;
 }
 
 .btn-verficha {

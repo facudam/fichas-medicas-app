@@ -149,6 +149,13 @@
     background-color: rgb(3, 110, 3);
 }
 
+@media screen and (max-width: 960px) {
+
+    .form-modal textarea {
+        height: 40px;
+    }
+}
+
 /*  ++++++++++++ Confirmation modal +++++++++++  */
 
 .fondo-confirmation {
