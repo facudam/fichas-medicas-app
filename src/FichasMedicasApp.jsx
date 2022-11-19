@@ -8,9 +8,10 @@ import { Sidebar } from './UI/Sidebar';
 export const FichasMedicasApp = () => {
   return (
     <>
-      <Header />
+      
 
       <div className='body-app'>
+        <Header />
         <Sidebar />
 
         <Routes>

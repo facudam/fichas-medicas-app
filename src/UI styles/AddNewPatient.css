@@ -1,6 +1,7 @@
 
 .add-page {
     padding: 25px;
+    grid-area: main;
 }
 
 .add-page__paragraph {

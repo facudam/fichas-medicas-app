@@ -1,5 +1,6 @@
 
 .pacientes-page {
+    grid-area: main;
     padding: 25px;
 }
 

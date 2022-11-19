@@ -6,31 +6,27 @@
   box-sizing: border-box;
 }
 
+html {
+  height: 100%;
+}
+
 body {
   font-family: 'Akshar', sans-serif;
   letter-spacing: 1px;
-
+  height: 100%;
+  width: inherit;
 }
 
+#root {
+  height: inherit;
+}
 .body-app {
   display: grid;
-  grid-template-columns: 255px 1fr;
-  grid-template-rows: calc(100vh - 74px );
+  height: inherit;
+  grid-template:
+   "header header" 74px
+   "sidebar main " 1fr /
+   265px
+   ;
 }
 
-@media  screen and (max-width: 800px ) {
-
-  .body-app {
-    grid-template-columns: 1fr;
-    grid-template-rows: auto
-  }
-  
-}
-
-@media screen and (max-height: 800px) {
-  .body-app {
-    grid-template-columns: 1fr;
-    grid-template-rows: auto
-  }
-  
-}
