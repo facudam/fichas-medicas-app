@@ -1,8 +1,20 @@
+.second-header {
+    padding: 55px 0px;
+    min-height: 50vh;
+    margin-bottom: 55px;
+    background-color: rgb(249, 248, 247);
+}
+
 
 .search-title {
     text-align: center;
     margin-bottom: 15px;
-    
+    font-size: 50px;
+}
+
+.search-paragraph {
+    text-align: center;
+    font-size: 1.3rem;
 }
 
 .search-form {

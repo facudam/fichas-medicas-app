@@ -3,7 +3,7 @@ header {
     width: 100%;
     padding: 0px 35px;
     /*box-shadow: 0px 1px 5px 0px #9b9ea1;*/
-    background-color: rgb(243, 244, 245);
+    background-color: rgba(53, 170, 185, .5);
     grid-area: header;
     display: flex;
 }
@@ -26,6 +26,7 @@ header {
 .header__div-name {
     font-size: 17px;
     font-weight: 900;
+    color: rgb(0, 0, 0);
     
 }
 

@@ -6,8 +6,9 @@ export const PatientSearch = () => {
 
   const { filtrar, searchPatient } = useContext(Context)
   return (
-    <div>
-        <h1 className='search-title'>Lista de pacientes</h1>
+    <div className='second-header'>
+        <h1 className='search-title'>Bienvenido al sistema de control de pacientes</h1>
+        <p className='search-paragraph'>Controla la información de tus pacientes</p>
 
         <form className='search-form'>
             <input
