@@ -9,18 +9,28 @@
 .search-title {
     text-align: center;
     margin-bottom: 15px;
-    font-size: 50px;
+    font-size: 48px;
+    padding: 5px;
 }
 
 .search-paragraph {
     text-align: center;
     font-size: 1.3rem;
+    margin-bottom: 25px;
 }
 
 .search-form {
     display: flex;
     justify-content: center;
     margin-bottom: 15px;
+    
+}
+
+.search-form input {
+    width: 300px;
+    border-radius: 25px 0px 0px 25px;
+    border: 2px solid rgb(110, 107, 107);
+    border-right: 0px;
 }
 
 .search-patient {
@@ -29,10 +39,15 @@
 }
 
 .container-search {
-    border: 1px solid rgb(5, 5, 5);
+    border: 2px solid rgb(110, 107, 107);
     padding: 5px 10px;
+    border-radius: 0px 25px 25px 0px;
 }
 
+.search-form input:focus {
+    border-color: rgb(53, 170, 185);
+    outline: 0 none;
+}
 
 .container-search img {
     width: 18px;

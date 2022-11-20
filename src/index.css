@@ -25,7 +25,7 @@ body {
   display: grid;
   height: inherit;
   grid-template:
-   "header header" 67px
+   "header header" 60px
    "sidebar main " 1fr /
    265px
    ;
@@ -34,7 +34,7 @@ body {
 @media screen and (max-width: 960px) {
   .body-app {
     grid-template:
-    "header header" 67px
+    "header header" 50px
     "sidebar sidebar " 74px
     "main main" 1fr /
     1fr

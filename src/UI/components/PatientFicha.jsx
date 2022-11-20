@@ -2,7 +2,7 @@ import { useContext } from 'react';
 import { Context } from '../../context/Context';
 import { Link } from 'react-router-dom';
 
-import '../../UI styles/AddNewPatient.css';
+import '../../UI styles/PatientFicha.css';
 import { ConfirmationModal } from '../modales/ConfirmationModal';
 
 

@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { Context } from "../../context/Context";
 import { PatientFicha } from "./PatientFicha";
+import "../../UI styles/PatientFicha.css";
 
  export const PatientTable = () => { 
 
