@@ -1,22 +1,28 @@
 .second-header {
     padding: 55px 0px;
     min-height: 50vh;
-    margin-bottom: 55px;
     border-radius: 25px;
+    background-color: #f6fdff;
+    margin: 10px 10px 35px 0px;
 }
 
 
 .search-title {
     text-align: center;
-    margin-bottom: 15px;
+    margin:  15px 20px ;
     font-size: 48px;
-    padding: 5px;
+    color: rgb(53, 170, 185);
+    text-shadow: 1px 1px 1px black;
+    
 }
 
 .search-paragraph {
     text-align: center;
     font-size: 1.3rem;
-    margin-bottom: 25px;
+    margin-bottom: 30px;
+    color: rgb(0, 0, 0);
+    
+    
 }
 
 .search-form {
@@ -31,6 +37,7 @@
     border-radius: 25px 0px 0px 25px;
     border: 2px solid rgb(110, 107, 107);
     border-right: 0px;
+    background-color: #f6fdff;
 }
 
 .search-patient {
@@ -53,4 +60,12 @@
     width: 18px;
     height: 15px;
 
+}
+
+
+@media screen and (max-width: 1200px) {
+    .second-header {
+        margin: 0px 0px 15px 0px;
+        border-radius: 0;
+    }
 }

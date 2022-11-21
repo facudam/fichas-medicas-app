@@ -18,10 +18,12 @@
     font-size: 19px;
     text-decoration: none;
     color: rgb(0, 0, 0);
+    
 }
 
 .link img {
     width: 25px;
+    
 }
 
 
@@ -31,7 +33,7 @@
     color: rgb(255, 255, 255);
 }
 
-@media screen and (max-width: 960px) {
+@media screen and (max-width: 1200px) {
     .sidebar {
         flex-direction: row;
         padding: 0;
@@ -39,7 +41,7 @@
     }
 
     .link:hover {
-        background-color: rgb(243, 244, 245);
+        background-color: inherit;
         color: #000;
     }
 }

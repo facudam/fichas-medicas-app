@@ -1,9 +1,6 @@
 
 .pacientes-page {
     grid-area: main;
-    margin: 15px 15px 15px 0px;
-    border-radius: 25px;
-    background-color: #f6fdff;
 }
 
 .no-pacientes {

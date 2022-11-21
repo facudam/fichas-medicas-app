@@ -12,17 +12,18 @@ export const Patients = () => {
 
   return (
     <div className='pacientes-page'>
-      <PatientSearch />
-      
-        {
-          ( state.length > 0 )
-            ? <PatientTable />
-            : <p className='no-pacientes'>Aún no se ha ingresado ningún paciente al sistema</p>
 
-        }
+        <PatientSearch />
+        
+          { 
+            ( state.length > 0 )
+              ? <PatientTable />
+              : <p className='no-pacientes'>Aún no se ha ingresado ningún paciente al sistema</p>
+            
+          }
 
-      <AgregarConsultaMedica />
-      
+        <AgregarConsultaMedica /> 
+          
     </div>
   )
 }

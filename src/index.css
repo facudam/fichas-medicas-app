@@ -34,7 +34,7 @@ body {
    ;
 }
 
-@media screen and (max-width: 960px) {
+@media screen and (max-width: 1200px) {
   .body-app {
     grid-template:
     "header header" 50px
