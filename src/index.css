@@ -5,6 +5,7 @@
   padding: 0;
   box-sizing: border-box;
   
+  
 }
 
 html {
@@ -16,6 +17,8 @@ body {
   letter-spacing: 1px;
   height: 100%;
   width: inherit;
+  background-color: rgba(53, 170, 185, .2);
+  
 }
 
 #root {
@@ -25,7 +28,7 @@ body {
   display: grid;
   height: inherit;
   grid-template:
-   "header header" 60px
+   "header main" 70px
    "sidebar main " 1fr /
    265px
    ;

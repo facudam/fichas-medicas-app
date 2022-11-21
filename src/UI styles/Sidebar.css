@@ -1,11 +1,10 @@
 
 .sidebar {
-    /*box-shadow: 0px 3px 5px 0px #9b9ea1;*/
+    
     grid-area: sidebar;
     display: flex;
     flex-direction: column;
     padding: 50px 0px;
-    background-color: rgba(53, 170, 185, .4);
     min-height: 100%;
     
     
