@@ -2,23 +2,27 @@
 .add-page {
     grid-area: main;
     padding: 55px 0px;
-    outline: 1px solid rgb(237, 238, 239);
+    background-color: #f6fdff;
+    margin: 10px 10px 10px 0;
+    border-radius: 25px;
     
 }
 
-.add-page__paragraph {
-    font-size: 24px;
+.add-page__title {
+    font-size: 35px;
     font-weight: bold;
     text-align: center;
     margin: 15px 0px 30px 0px;
+    color: rgb(53, 170, 185);
+    text-shadow: 1px 1px 1px black;
 }
 
 .datos-personales-container {
     width: 95%;
-    max-width: 650px;
+    max-width: 1000px;
     margin: auto;
-    background-color: rgb(0, 170, 185);
-    padding: 40px 25px;
+    background-color: rgb(53, 170, 185);
+    padding: 40px ;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -27,12 +31,36 @@
     box-shadow: 7px 6px 7px 1px #808080;
 }
 
-.label {
+.datos-personales-container h2 {
+    display: block;
+    width: 100%;
+    text-align: center;
+    text-shadow: 1px 1px 1px black;
+    margin-bottom: 25px;
+}
+
+.flex-container {
+    width: 100% ;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.flex-container__box {
+    width: 100%;
+    max-width: 455px;
+    background-color: red;
+    display: flex;
+    flex-direction: column;
+}
+
+/*.label {
     width: 95%;
     font-size: 18px;
     font-weight: bold;
     margin: auto;
-    margin-bottom: 7px;
+    
 }
 
 .input {
@@ -49,6 +77,8 @@
 .input:focus {
     outline: none;
 }
+
+*/
 
 .obligatorio {
     color: rgb(235, 10, 10);
@@ -67,10 +97,16 @@
 }
 
 .button:hover {
-    color: rgb(255, 0, 0);
+    color: green;
     border-radius: 10px;  
 }
 
+@media screen and (max-width: 1200px) {
+    .add-page {
+        margin: 0;
+        border-radius: 0;
+    }
+}
 
 
 

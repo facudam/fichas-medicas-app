@@ -36,7 +36,6 @@
     width: 300px;
     border-radius: 25px 0px 0px 25px;
     border: 2px solid rgb(110, 107, 107);
-    border-right: 0px;
     background-color: #f6fdff;
 }
 
@@ -47,6 +46,7 @@
 
 .container-search {
     border: 2px solid rgb(110, 107, 107);
+    border-left: 0px;
     padding: 5px 10px;
     border-radius: 0px 25px 25px 0px;
 }
