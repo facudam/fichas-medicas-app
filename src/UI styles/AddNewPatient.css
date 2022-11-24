@@ -19,16 +19,17 @@
 
 .datos-personales-container {
     width: 95%;
-    max-width: 1000px;
+    max-width: 1100px;
     margin: auto;
     background-color: rgb(53, 170, 185);
-    padding: 40px ;
+    padding: 35px ;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     color: #fff;
     border-radius: 15px;
     box-shadow: 7px 6px 7px 1px #808080;
+    margin-bottom: 15px;
 }
 
 .datos-personales-container h2 {
@@ -43,36 +44,42 @@
     width: 100% ;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
-    gap: 10px;
+    gap: 16px;
+    
+    
+    
+    
 }
 
 .flex-container__box {
     width: 100%;
-    max-width: 455px;
-    background-color: red;
+    max-width: 450px;
     display: flex;
     flex-direction: column;
+    margin: auto;
+    
 }
 
-/*.label {
-    width: 95%;
+.label {
+    
     font-size: 18px;
     font-weight: bold;
-    margin: auto;
+    margin-bottom: 5px;
     
 }
 
 .input {
-    width: 95%;
+    width: 100%;
     padding:  12px;
-    margin: auto;
     margin-bottom: 25px;
     border: none;
     border-radius: 15px;
-    background-color: rgb(249, 248, 247);
     
 }
+
+/*
+
+
 
 .input:focus {
     outline: none;
@@ -99,6 +106,17 @@
 .button:hover {
     color: green;
     border-radius: 10px;  
+}
+
+@media screen and (max-width: 1350px) {
+    .datos-personales-container {
+        max-width: 650px;
+        padding: 25px;
+    }
+
+    .flex-container__box {
+        max-width: 2000px;
+    }
 }
 
 @media screen and (max-width: 1200px) {
