@@ -1,11 +1,12 @@
 
 .add-page {
+    height: calc(100% - 20px);
     grid-area: main;
     padding: 55px 0px;
     background-color: #f6fdff;
-    margin: 10px 10px 10px 0;
+    margin: 10px 10px 10px 0px;
     border-radius: 25px;
-    
+      
 }
 
 .add-page__title {
@@ -28,7 +29,7 @@
     justify-content: space-between;
     color: #fff;
     border-radius: 15px;
-    box-shadow: 7px 6px 7px 1px #808080;
+    box-shadow: 1px 1px 7px 1px #808080;
     margin-bottom: 15px;
 }
 
@@ -123,6 +124,7 @@
     .add-page {
         margin: 0;
         border-radius: 0;
+        height: 100%;
     }
 }
 

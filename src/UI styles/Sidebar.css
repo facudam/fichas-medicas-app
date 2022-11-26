@@ -1,13 +1,10 @@
 
 .sidebar {
-    
     grid-area: sidebar;
     display: flex;
     flex-direction: column;
     padding: 50px 0px;
-    min-height: 100%;
-    
-    
+   
 }
 
 .link {

@@ -3,8 +3,7 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-  
+  box-sizing: border-box; 
   
 }
 
@@ -12,21 +11,27 @@ html {
   height: 100%;
 }
 
+@media screen and (max-height: 883px) {
+  html {
+    height: auto;
+  }
+}
+
 body {
   font-family: 'Akshar', sans-serif;
   letter-spacing: 1px;
   height: 100%;
-  width: inherit;
   background-color: rgba(53, 170, 185, .2);
   
 }
 
 #root {
-  height: inherit;
+  height: 100%;
+  
 }
 .body-app {
   display: grid;
-  height: inherit;
+  height: 100%;
   grid-template:
    "header main" 70px
    "sidebar main " 1fr /
