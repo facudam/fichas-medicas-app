@@ -10,7 +10,7 @@ export const ConfirmationModal = ({ paciente, nombrePaciente }) => {
     if (!confirmationModalIsOpen) return
 
     return ReactDOM.createPortal(
-        <div>
+        <>
             <div className="fondo-confirmation"></div>
             <div className="confirmation-modal">
                 <p className="mensaje">¿Está seguro que desea eliminar al paciente { nombrePaciente }?</p>
@@ -24,7 +24,7 @@ export const ConfirmationModal = ({ paciente, nombrePaciente }) => {
                     </button>
                 </div>
             </div>
-        </div>,
+        </>,
         document.getElementById('portal')
     )
 }

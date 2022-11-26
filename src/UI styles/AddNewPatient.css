@@ -45,11 +45,8 @@
     width: 100% ;
     display: flex;
     flex-wrap: wrap;
-    gap: 16px;
-    
-    
-    
-    
+    gap: 16px; 
+
 }
 
 .flex-container__box {
@@ -78,18 +75,17 @@
     
 }
 
-/*
-
-
-
 .input:focus {
-    outline: none;
+    border: 3px solid rgb(53, 170, 185);
+    outline: 2px solid rgb(255, 255, 255);
+    padding: 9px;
+    
 }
-
-*/
 
 .obligatorio {
     color: rgb(235, 10, 10);
+
+    
 }
 
 .button {
@@ -97,7 +93,8 @@
     padding: 10px 25px;
     border-radius: 5px;
     cursor: pointer;
-    border: none;
+    outline: 2px solid rgb(255, 255, 255);
+    border: 2px solid rgb(53, 170, 185);
     font-size: 14px;
     font-weight: bold;
     background-color: #fff;
@@ -105,9 +102,12 @@
 }
 
 .button:hover {
-    color: green;
-    border-radius: 10px;  
+    border-color: black;
+    background-color: #d6eef1;
+    
 }
+
+
 
 @media screen and (max-width: 1350px) {
     .datos-personales-container {
