@@ -1,12 +1,13 @@
 
 .consulta {
     padding: 13px;
-    background-color: #fff;
+    background-color: rgba(53, 170, 185, .2);
     margin: 15px 10px;
+    
 }
 
 .consulta p {
     font-size: 18px;
-    border-bottom: 1px solid rgb(180, 174, 174);
+    border-bottom: 1px solid #f6fdff;
     padding: 5px 10px;
 }

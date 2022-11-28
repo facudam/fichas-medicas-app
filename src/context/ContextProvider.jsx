@@ -125,7 +125,6 @@ export const ContextProvider = ({ children }) => {
                     )
 
                 )
-                console.log(state)
                 return state
                 
 

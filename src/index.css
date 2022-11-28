@@ -11,7 +11,8 @@ html {
   height: 100%;
 }
 
-@media screen and (max-height: 883px) {
+/* Si la altura del viewport es menor a 900px modificamos el height a auto para que así el formulario esté completanmente dentro del contenedor  */
+@media screen and (max-height: 900px) {
   html {
     height: auto;
   }
