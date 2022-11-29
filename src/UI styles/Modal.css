@@ -156,15 +156,19 @@
 }
 
 .form-modal textarea {
-    height: 100px;
+    height: 60px;
     resize: none;
     padding: 10px;
     border-radius: 5px;
+    background-color: rgba(170, 205, 210, 0.2);
+    transition: height .3s ease;
 }
 
 .form-modal textarea:focus {
     outline: 2px solid rgb(53, 170, 185);
     border: none;
+    height: 100px;
+    background-color: #fff;
 }
 
 .form-modal button {
