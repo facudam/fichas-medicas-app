@@ -1,0 +1,24 @@
+
+.pacientes-page {
+    grid-area: main;
+    background-color:var(--hover-bg-color);   
+}
+
+.pacientes-main {
+    padding: 30px;
+}
+
+.no-pacientes {
+    width: 95%;
+    background-color: rgb(241, 6, 6);
+    padding: 15px;
+    text-align: center;
+    font-size: 18px;
+    color: #fff;
+    max-width: 1000px;
+    margin: auto;
+    border-radius: 15px;
+    margin: auto;
+}
+
+
