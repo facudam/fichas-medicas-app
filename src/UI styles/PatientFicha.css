@@ -10,21 +10,25 @@
     
 }
 
+td {
+    border-radius: 5px;
+}
+
 .tr-ficha {
     background-color: rgba(53, 170, 185, .2);
     
 }
 
 .tr-ficha-titles {
-    background-color: rgba(53, 170, 185, .0);
-    
+    background-color: rgba(9, 106, 118, 0);
 }
 
 .td-ficha {
     height: 100%;
     padding: 5px;
     font-size: 18px;
-     
+    border-radius: 5px;
+    overflow: hidden;
 }
 
 .td-ficha-title {
@@ -32,17 +36,7 @@
     text-align: start;
 }
 
-.center {
-    display: flex;
-    justify-content: center;
-    gap: 7px;
-    align-items: center;
-    flex-wrap: wrap;
-    padding: 5px 0px;
-    border-radius: 5px;
-    
-    
-}
+
 
 .btn-verficha {
     font-size: 15px;
@@ -53,7 +47,6 @@
     transition:  all .5s ease;
     text-decoration: none;
     text-align: center;
-    font-family: arial;
     letter-spacing: 0;
 }
 
@@ -99,4 +92,15 @@
     outline: 1px solid rgb(255, 0, 0);
     color: rgb(255, 0, 0);
     background-color: #fff;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+    gap: 7px;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 5px 0px;
+    border-radius: 5px;
+    overflow: hidden;
 }
