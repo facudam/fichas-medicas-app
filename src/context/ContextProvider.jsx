@@ -91,7 +91,7 @@ export const ContextProvider = ({ children }) => {
 
     //Estado inicial del reducer:
     
-    const initialState = [{nombre: 'Santiago Ismael', apellido: 'Schiavi', dni: '34561298', edad: 23, telefono: 1525455677, email: 'santiago_schiavi@gmail.com', consultas: []}];
+    const initialState = [{nombre: 'Santiago Ismael', apellido: 'Schiavi', dni: '34561298', edad: 23, telefono: 1525455677, email: 'santiago_schiavi@gmail.com', consultas: []}, {nombre: 'Fernando Martín', apellido: 'Castro', dni: '34345455', edad: 33, telefono: 1522355444, email: 'fercastro-20@gmail.com', consultas: []}, {nombre: 'Agustina Inés', apellido: 'Prado', dni: '40450054', edad: 20, telefono: 1552455690, email: 'agusprado-ines@gmail.com', consultas: []}];
 
     const patientsReducer = (state, action) => {
         switch (action.type) {
