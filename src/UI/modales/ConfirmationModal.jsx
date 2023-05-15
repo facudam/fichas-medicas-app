@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import ReactDOM from "react-dom";
 import { Context } from "../../context/Context";
+import '../../UI styles/Modal.css'
 
 
 export const ConfirmationModal = ({ paciente, nombrePaciente }) => {
@@ -11,9 +12,10 @@ export const ConfirmationModal = ({ paciente, nombrePaciente }) => {
 
     return ReactDOM.createPortal(
         <>
-            <div className="fondo-confirmation"></div>
+            {/* <div className="fondo-agregar"></div> */}
+            <div className="modal-fondo2"></div>
             <div className="confirmation-modal">
-                <p className="mensaje">¿Está seguro que desea eliminar al paciente { nombrePaciente }?</p>
+                <p className="mensaje">¿Está seguro que desea eliminar al paciente { nombrePaciente } { paciente.apellido}?</p>
                 <div className="btn-container">
                     <button
                         onClick= { () => deletePatient(paciente) }
