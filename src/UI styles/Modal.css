@@ -121,6 +121,7 @@
     font-size: 30px;
     color: rgb(53, 170, 185);
     text-shadow: 1px 1px 1px #000;
+    font-weight: 400;
 }
 
 .flex-container-consulta button {

@@ -1,7 +1,5 @@
 import { useContext } from 'react';
 import { Context } from '../../context/Context';
-import { Link } from 'react-router-dom';
-
 import '../../UI styles/PatientFicha.css';
 import { ConfirmationModal } from '../modales/ConfirmationModal';
 
@@ -33,7 +31,7 @@ export const PatientFicha = ({ apellido, nombre, dni, paciente }) => {
           { `${apellido}, ${nombre}` }
       </td>
       <td className={`td-ficha center`}>
-          <Link className='btn-verficha' to="/ficha-activa" onClick={() => setCurrentPatient([paciente])}>Ver ficha médica</Link>
+          <button className='btn-verficha' onClick={() => setCurrentPatient([paciente])}>Ver ficha médica</button>
           <button 
             className='btn-ficha'
             onClick={ () =>  openConsultaModal(paciente)}
