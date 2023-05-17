@@ -10,12 +10,10 @@ export const AddNewPatient = () => {
 
 
   return (
-    
-      <div className="add-page">
-        <h1 className='add-page__title'>Ingrese los datos del nuevo paciente:</h1>
-
+    <section className="add-page">
+      <div className='add-page-main'>
         <form className='datos-personales-container'>
-          <h2>REGISTRO DE NUEVO PACIENTE</h2>
+          <h1>Registro de Nuevo Paciente</h1>
           <div className='flex-container'>
             <div className='flex-container__box'>
               <label className='label' htmlFor='nombre'>Nombre: <span className='obligatorio'>*</span> </label>
@@ -42,7 +40,7 @@ export const AddNewPatient = () => {
         
 
           <button 
-            className='button'
+            className= {`btn-ficha button`}
             type='submit'
             onClick={ addPatient }
           >Añadir</button>
@@ -51,8 +49,8 @@ export const AddNewPatient = () => {
         <ModalSuccess mensaje={'¡Paciente añadido correctamente!'} />
         <ModalError />
       
-      
       </div>
+    </section>
     
   )
 }
