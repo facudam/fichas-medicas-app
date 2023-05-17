@@ -8,6 +8,7 @@
     background-color: #f6fdff;
     margin: 10px 10px 10px 0;
     border-radius: 25px;
+    color: rgba(0,0,0, .8);
 }
 
 .datos-personales-container {
@@ -26,9 +27,9 @@
     width: 100%;
     text-align: center;
     text-shadow: 1px 1px 1px black;
-    margin-bottom: 45px;
-    color: rgb(47, 46, 46);
+    margin-bottom: 55px;
     font-weight: 400;
+    color: rgba(53, 170, 185);
 }
 
 .flex-container {
@@ -55,34 +56,27 @@
 
 .input {
     width: 100%;
-    padding:  12px;
+    padding:  5px;
     margin-bottom: 25px;
     border: none;
-    border-radius: 10px;
-    /* background-color: #f6fdff; */
-    background-color: rgba(53, 170, 185, .3);
-    color: #fff;
+    border-bottom: 1px solid rgb(161, 157, 157);
+    background-color: #f6fdff;
+    transition: all .5s ease;
+    font-size: 18px;
+}
+
+.input::placeholder {
+    font-size: 16px;
+    color: rgba(0,0,0, .3);
 }
 
 .input:focus {
     outline: none;
+    border-color: rgba(53, 170, 185);
 }
 
 .obligatorio {
-    color: rgb(235, 10, 10);  
-}
-
-.button {
-    margin: auto;
-    padding: 10px 25px;
-    border-radius: 5px;
-    cursor: pointer;
-    outline: 2px solid rgb(255, 255, 255);
-    border: 2px solid rgb(53, 170, 185);
-    font-size: 14px;
-    font-weight: bold;
-    background-color: #fff;
-    transition: all .4s ease; 
+    color: rgba(235, 10, 10, .7);  
 }
 
 .button:hover {

@@ -64,8 +64,14 @@ td {
     background-color: rgb(16, 145, 102);
     color: #fff;
     border-radius: 5px;
-    transition: all .5s ease;
-    
+    transition: all .5s ease;  
+}
+
+.button {
+    margin: auto;
+    font-size: 18px;
+    padding: 5px 15px;
+    background-color: rgba(53, 170, 185);
 }
 
 .btn-ficha:hover {
@@ -73,6 +79,11 @@ td {
     cursor: pointer;
     background-color: #fff;
     color: rgb(16, 145, 102);
+}
+
+.button:hover {
+    color: rgba(53, 170, 185);
+    outline: 1px solid rgba(53, 170, 185);
 }
 
 .btn-ficha-delete {
