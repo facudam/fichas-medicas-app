@@ -7,6 +7,21 @@
    
 }
 
+.admin {
+    width: 100%;
+    padding: 20px 30px;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 25px;
+}
+.admin img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+
 .link {
     display: flex;
     align-items: center;
@@ -24,7 +39,7 @@
 }
 
 
-.link:hover {
+.link-activo {
     background-color: rgb(53, 170, 185);
     cursor: pointer;
     color: rgb(255, 255, 255);
