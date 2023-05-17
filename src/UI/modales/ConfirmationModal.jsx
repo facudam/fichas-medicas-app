@@ -15,7 +15,7 @@ export const ConfirmationModal = ({ paciente, nombrePaciente }) => {
             {/* <div className="fondo-agregar"></div> */}
             <div className="modal-fondo2"></div>
             <div className="confirmation-modal">
-                <p className="mensaje">¿Está seguro que desea eliminar al paciente { nombrePaciente } { paciente.apellido}?</p>
+                <p>¿Está seguro que desea eliminar al paciente { nombrePaciente } { paciente.apellido}?</p>
                 <div className="btn-container">
                     <button
                         onClick= { () => deletePatient(paciente) }

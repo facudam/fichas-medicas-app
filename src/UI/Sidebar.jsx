@@ -8,12 +8,12 @@ export const Sidebar = () => {
   return (
     <nav className="sidebar">
         <Link className='link' to="/">
-          <FontAwesomeIcon icon={faHospitalUser} />
+          <FontAwesomeIcon icon={faHospitalUser} className='font-icon' />
           Pacientes
         </Link>
         
         <Link className='link' to="/agregar-paciente">
-          <FontAwesomeIcon icon={faUserPlus} />
+          <FontAwesomeIcon icon={faUserPlus} className='font-icon' />
           Ingresar nuevo
         </Link>
       

@@ -4,17 +4,18 @@
     background-color:var(--hover-bg-color);   
 }
 
-.pacientes-main {
-    padding: 30px;
+.pacientes-page h2 {
+    text-align: center;
+    margin: 20px 0;
+    font-weight: 400;
 }
 
 .no-pacientes {
     width: 95%;
-    background-color: rgb(241, 6, 6);
+    background-color: rgb(255,255,255);
     padding: 15px;
     text-align: center;
     font-size: 18px;
-    color: #fff;
     max-width: 1000px;
     margin: auto;
     border-radius: 15px;
