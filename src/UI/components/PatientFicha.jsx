@@ -2,6 +2,7 @@ import { useContext } from 'react';
 import { Context } from '../../context/Context';
 import '../../UI styles/PatientFicha.css';
 import { ConfirmationModal } from '../modales/ConfirmationModal';
+import { formatearDNI } from '../../helpers/formatearDNI';
 
 
 export const PatientFicha = ({ apellido, nombre, dni, paciente }) => {
@@ -29,7 +30,7 @@ export const PatientFicha = ({ apellido, nombre, dni, paciente }) => {
   <> 
     <tr className='tr-ficha'>
       <td className='td-ficha'>
-        { dni }
+        { formatearDNI(dni)  }
       </td>
       <td className='td-ficha'>
           { `${apellido}, ${nombre}` }

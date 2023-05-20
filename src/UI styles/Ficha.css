@@ -15,6 +15,55 @@
     animation: modalConsulta .5s ease;
 }
 
-.registro-title {
-    color: #000;
+.ficha-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 25px;
+}
+
+.ficha-header button {
+    padding: 10px;
+    height: 26px;
+    display: flex;
+    align-items: center;
+    border: none;
+    background-color: rgb(255, 0, 0);
+    color: #fff;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: all .3s ease;
+}
+
+.ficha-header button:hover {
+    background-color: #fff;
+    color: rgb(224, 11, 11);
+    outline: 2px solid rgb(224, 11, 11);   
+}
+
+.ficha-info {
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 30px;
+}
+
+.ficha-info__user {
+    display: flex;
+    width: 200px; 
+    height: 155px;
+    justify-content: center;
+    align-items: center;
+}
+
+.ficha-user {
+    height: 60%;
+}
+
+.ficha-info__datos {
+    padding: 20px 25px;
+}
+
+.no-consultas {
+    text-align: center;
+    background-color: rgba(0,0,0,.1);
+    padding: 7px;
 }

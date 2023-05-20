@@ -3,11 +3,14 @@ import '../../UI styles/Consulta.css';
 export const Consulta = ({ fecha, padecimiento, tratamiento, notas}) => {
 
     return(
-        <div className="consulta">
-            <p><b>Fecha de consulta:</b>  { fecha }</p>
-            <p><b>Padecimiento:</b>  { padecimiento }</p>
-            <p><b>Tratamiento y/o medicación:</b>  { tratamiento }</p>
-            <p><b>Notas adicionales:</b>  { notas }</p>
-        </div>
+        <table className="consulta">
+            <tbody>
+            <tr><th>Fecha de consulta:</th><td>{ fecha }</td></tr>
+            <tr><th>Padecimiento:</th><td>{ padecimiento }</td></tr>
+            <tr><th>Tratamiento y/o medicación:</th><td>{ tratamiento }</td></tr>
+            <tr><th>Notas adicionales:</th><td>{ notas }</td></tr>
+            </tbody>
+            
+        </table>
     )
 }

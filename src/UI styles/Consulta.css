@@ -1,13 +1,30 @@
 
 .consulta {
-    padding: 13px;
-    background-color: rgba(53, 170, 185, .2);
-    margin: 15px 10px;
-    
+    margin-top: 15px;
+    width: 100%;
+    /* background-color: rgba(53, 170, 185, .1); */
+    border: 1px solid rgb(235,235,235);
+    text-align: left;
+    border-spacing: 0;
+}
+.consulta tr {
+    background-color: rgb(235,235,235);
 }
 
-.consulta p {
-    font-size: 18px;
-    border-bottom: 1px solid #f6fdff;
+.consulta tr th {
     padding: 5px 10px;
+    width: 29%;
+}
+
+.consulta tr:nth-child(odd) {
+    background-color: rgb(245,245,245);
+}
+
+.consulta tr td {
+    padding: 5px;
+    background-color: rgb(245,245,245);
+}
+
+.consulta tr:nth-child(odd) td {
+    background-color: #fff;
 }
