@@ -22,13 +22,12 @@ body {
   letter-spacing: 1px;
   height: 100%;
   background-color: rgba(53, 170, 185, .2);
-  
 }
 
 #root {
   height: 100%;
-  
 }
+
 .body-app {
   display: grid;
   height: 100%;
