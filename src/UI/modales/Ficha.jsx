@@ -26,11 +26,11 @@ export const Ficha = () => {
                     </div>
                     <div className="ficha-info__datos">
                         <h3>Datos personales</h3>
-                        <p>Nombre completo: {currentPatient[0].apellido}, {currentPatient[0].nombre}</p>
-                        <p>Edad: {currentPatient[0].edad} años</p>
-                        <p>DNI: { formatearDNI(currentPatient[0].dni) }</p>
-                        <p>Teléfono: {currentPatient[0].telefono}</p>
-                        <p>Email: {currentPatient[0].email}</p>   
+                        <p>Nombre completo: <span className="font-clear">{currentPatient[0].apellido}, {currentPatient[0].nombre}</span></p>
+                        <p>Edad: <span className="font-clear">{currentPatient[0].edad} años</span></p>
+                        <p>DNI: <span className="font-clear">{ formatearDNI(currentPatient[0].dni) }</span></p>
+                        <p>Teléfono: <span className="font-clear">{currentPatient[0].telefono}</span></p>
+                        <p>Email: <span className="font-clear">{currentPatient[0].email}</span></p>   
                     </div>
                 </div>
                 <div className="consultas-realizadas">

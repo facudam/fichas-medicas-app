@@ -22,14 +22,14 @@ import { Context } from '../../context/Context';
                 <p><strong>Paciente:</strong> { `${currentPatient[0].apellido}, ${currentPatient[0].nombre}` }</p>
                 <form className='form-modal'>
                     <div>
-                        <label>Fecha: </label>
+                        <label><span className='obligatorio'>*</span> Fecha: </label>
                         <input  type='date' value={ fecha } onChange={ handleFecha } />
                     </div>
                     
-                    <label>Motivo o Padecimiento:</label>
+                    <label><span className='obligatorio'>*</span> Motivo o Padecimiento:</label>
                     <textarea value={ padecimiento } onChange={ handlePadecimiento }/>
 
-                    <label>Tratamiento y/o medicación: </label>
+                    <label><span className='obligatorio'>*</span> Tratamiento y/o medicación: </label>
                     <textarea value={ tratamiento } onChange={ handleTratamiento } />
 
                     <label>Notas adicionales:</label>

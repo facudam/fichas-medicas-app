@@ -2,18 +2,18 @@
 .consulta {
     margin-top: 15px;
     width: 100%;
-    /* background-color: rgba(53, 170, 185, .1); */
     border: 1px solid rgb(235,235,235);
     text-align: left;
     border-spacing: 0;
+    font-size: 17px;
 }
 .consulta tr {
     background-color: rgb(235,235,235);
 }
 
 .consulta tr th {
-    padding: 5px 10px;
-    width: 29%;
+    padding: 10px;
+    width: 30%;
 }
 
 .consulta tr:nth-child(odd) {
