@@ -102,6 +102,15 @@
     
 }
 
+.modal-agregar .datos-faltantes {
+    background-color: rgba(255,0,0,.9);
+    padding: 10px;
+    font-size: 16px;
+    text-align: center;
+    color: #fff;
+    animation: datosFaltantes .6s ease forwards;
+}
+
 .modal-agregar p {
     font-size: 20px;
     margin-bottom: 15px;
@@ -203,8 +212,16 @@
     outline: 1px solid rgb(5, 129, 5);
 }
 
-@media screen and (max-width: 960px) {
+@keyframes datosFaltantes {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }  
+}
 
+@media screen and (max-width: 960px) {
     .form-modal textarea {
         height: 50px;
     }

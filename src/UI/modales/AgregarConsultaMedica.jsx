@@ -6,7 +6,12 @@ import { Context } from '../../context/Context';
 
  export const AgregarConsultaMedica = ({ paciente='Facundo Cáceres' }) => {
 
-    const { addModalIsOpen, setAddModalIsOpen, fecha, padecimiento, tratamiento, notas, handleFecha, handlePadecimiento, handleTratamiento, handleNotas, addConsulta, currentPatient } = useContext(Context)
+    const { addModalIsOpen, setAddModalIsOpen, fecha, padecimiento, tratamiento, notas, handleFecha, handlePadecimiento, handleTratamiento, handleNotas, addConsulta, currentPatient, datosConsultaIncompletos, setDatosConsultaIncompletos } = useContext(Context)
+
+    const cerrarModal = () => {
+        setAddModalIsOpen(false)
+        setDatosConsultaIncompletos(false)
+    }
 
     if (!addModalIsOpen) return;
 
@@ -16,9 +21,11 @@ import { Context } from '../../context/Context';
             <div className='modal-agregar'>
                 <div className='flex-container-consulta'>
                     <h2>Agregar consulta médica</h2>
-                    <button onClick={ () => setAddModalIsOpen(false)}>x</button>
+                    <button onClick={ cerrarModal }>x</button>
                 </div>
-                
+                {
+                    datosConsultaIncompletos && <p className='datos-faltantes'>Por favor, ingrese los datos faltantes</p>
+                }
                 <p><strong>Paciente:</strong> { `${currentPatient[0].apellido}, ${currentPatient[0].nombre}` }</p>
                 <form className='form-modal'>
                     <div>

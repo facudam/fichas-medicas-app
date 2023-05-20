@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import ReactDOM from "react-dom";
 import { Context } from "../../context/Context";
 import '../../UI styles/Ficha.css'

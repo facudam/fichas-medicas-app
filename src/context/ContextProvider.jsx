@@ -34,6 +34,7 @@ export const ContextProvider = ({ children }) => {
 
     const [ mensajeModal, setMensajeModal ] = useState('')
     const [ fichaIsOpen, setFichaIsOpen ] = useState(false)
+    const [ datosConsultaIncompletos, setDatosConsultaIncompletos ] = useState(false)
 
     
 
@@ -179,16 +180,22 @@ export const ContextProvider = ({ children }) => {
 
         const nuevaConsulta = { fecha: fecha, padecimiento: padecimiento, tratamiento: tratamiento, notas: notas }
 
-        dispatch({
-            type: PatientActions.ADD_CONSULTA,
-            payload: nuevaConsulta
-        })
-
-        setFecha('')
-        setPadecimiento('')
-        setTratamiento('')
-        setNotas('')
-        setAddModalIsOpen(false)
+        if ( fecha.trim().length > 1 && padecimiento.trim().length > 1 && tratamiento.trim().length > 1 ) {
+            dispatch({
+                type: PatientActions.ADD_CONSULTA,
+                payload: nuevaConsulta
+            })
+            setFecha('')
+            setPadecimiento('')
+            setTratamiento('')
+            setNotas('')
+            setAddModalIsOpen(false)
+            setDatosConsultaIncompletos(false)
+        } else {
+            console.warn('DEBES INGRESAR TODOS LOS DATOS OBLIGATORIOS')
+            setDatosConsultaIncompletos(true)
+        }
+        
     }
 
 
@@ -196,7 +203,7 @@ export const ContextProvider = ({ children }) => {
 
 
     return(
-        <Context.Provider  value={{ state, addPatient, nombre, apellido, dni, edad, telefono, email, handleTelefono, handleApellido, handleDni, handleEdad, handleName, handleEmail, modalIsOpen, setModalIsOpen, errorModalIsOpen, setErrorModalIsOpen, deletePatient, confirmationModalIsOpen, setConfirmationModalIsOpen, currentPatient, setCurrentPatient, addModalIsOpen, setAddModalIsOpen, fecha, padecimiento, setPadecimiento, tratamiento, setTratamiento, notas, setNotas, handleFecha, handlePadecimiento, handleTratamiento, handleNotas, addConsulta, filtrar, setFiltrar, searchPatient, mensajeModal,fichaIsOpen, setFichaIsOpen }} >
+        <Context.Provider  value={{ state, addPatient, nombre, apellido, dni, edad, telefono, email, handleTelefono, handleApellido, handleDni, handleEdad, handleName, handleEmail, modalIsOpen, setModalIsOpen, errorModalIsOpen, setErrorModalIsOpen, deletePatient, confirmationModalIsOpen, setConfirmationModalIsOpen, currentPatient, setCurrentPatient, addModalIsOpen, setAddModalIsOpen, fecha, padecimiento, setPadecimiento, tratamiento, setTratamiento, notas, setNotas, handleFecha, handlePadecimiento, handleTratamiento, handleNotas, addConsulta, filtrar, setFiltrar, searchPatient, mensajeModal,fichaIsOpen, setFichaIsOpen, datosConsultaIncompletos, setDatosConsultaIncompletos }} >
             { children }
         </Context.Provider>
     )
