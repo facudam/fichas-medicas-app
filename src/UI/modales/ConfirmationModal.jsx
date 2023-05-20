@@ -12,7 +12,6 @@ export const ConfirmationModal = ({ paciente, nombrePaciente }) => {
 
     return ReactDOM.createPortal(
         <>
-            {/* <div className="fondo-agregar"></div> */}
             <div className="modal-fondo2"></div>
             <div className="confirmation-modal">
                 <p>¿Está seguro que desea eliminar al paciente { nombrePaciente } { paciente.apellido}?</p>

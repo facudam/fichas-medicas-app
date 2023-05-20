@@ -69,8 +69,9 @@ td {
 
 .button {
     margin: auto;
-    font-size: 18px;
-    padding: 5px 15px;
+    margin-top: 30px;
+    font-size: 20px;
+    padding: 7px 20px;
     background-color: rgba(53, 170, 185);
 }
 

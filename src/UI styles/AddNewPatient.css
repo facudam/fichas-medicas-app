@@ -79,14 +79,6 @@
     color: rgba(235, 10, 10, .7);  
 }
 
-.button:hover {
-    border-color: black;
-    background-color: #d6eef1;
-    
-}
-
-
-
 @media screen and (max-width: 1350px) {
     .datos-personales-container {
         max-width: 650px;

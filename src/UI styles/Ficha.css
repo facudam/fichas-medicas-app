@@ -1,0 +1,20 @@
+
+.ficha {
+    width: 95%;
+    max-width: 1000px;
+    max-height: 700px;
+    overflow-y: auto;
+    background-color: #fff;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    border-radius: 15px;
+    transform: translate(-50%, -50%);
+    padding: 50px;
+    box-shadow: 1px 2px 13px -4px #111111;
+    animation: modalConsulta .5s ease;
+}
+
+.registro-title {
+    color: #000;
+}

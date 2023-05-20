@@ -6,7 +6,7 @@ import { ConfirmationModal } from '../modales/ConfirmationModal';
 
 export const PatientFicha = ({ apellido, nombre, dni, paciente }) => {
 
-  const { setConfirmationModalIsOpen, currentPatient, setCurrentPatient, setAddModalIsOpen } = useContext(Context)
+  const { setConfirmationModalIsOpen, currentPatient, setCurrentPatient, setAddModalIsOpen, setFichaIsOpen } = useContext(Context)
 
 
   const enviarDatos = (patient) => {
@@ -19,6 +19,10 @@ export const PatientFicha = ({ apellido, nombre, dni, paciente }) => {
     setCurrentPatient([patient])
   }
 
+  const verFichaMedica = () => {
+    setCurrentPatient([paciente])
+    setFichaIsOpen(true)
+  }
 
   return (
 
@@ -31,7 +35,7 @@ export const PatientFicha = ({ apellido, nombre, dni, paciente }) => {
           { `${apellido}, ${nombre}` }
       </td>
       <td className={`td-ficha center`}>
-          <button className='btn-verficha' onClick={() => setCurrentPatient([paciente])}>Ver ficha médica</button>
+          <button className='btn-verficha' onClick={ verFichaMedica }>Ver ficha médica</button>
           <button 
             className='btn-ficha'
             onClick={ () =>  openConsultaModal(paciente)}

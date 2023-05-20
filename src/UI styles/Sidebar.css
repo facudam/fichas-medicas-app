@@ -41,19 +41,20 @@
 
 .link-activo {
     background-color: rgb(53, 170, 185);
-    cursor: pointer;
     color: rgb(255, 255, 255);
 }
 
 @media screen and (max-width: 1200px) {
+    .admin {
+        display: none;
+    }
     .sidebar {
         flex-direction: row;
         padding: 0;
         justify-content: center;
     }
-
-    .link:hover {
-        background-color: inherit;
+    .link-activo {
+        background-color: #d6eef1;
         color: #000;
     }
 }

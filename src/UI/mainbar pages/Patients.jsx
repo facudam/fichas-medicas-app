@@ -4,11 +4,12 @@ import '../../UI styles/Patients.css';
 import { PatientSearch } from '../components/PatientSearch';
 import { PatientTable } from '../components/PatientTable';
 import { AgregarConsultaMedica } from '../modales/AgregarConsultaMedica'
+import { Ficha } from '../modales/Ficha';
 
 
 export const Patients = () => {
 
-  const { state } = useContext(Context);
+  const { state, fichaIsOpen } = useContext(Context);
 
   return (
     <div className='pacientes-page'>
@@ -25,7 +26,9 @@ export const Patients = () => {
             
           }
         <AgregarConsultaMedica /> 
-          
+        {
+          fichaIsOpen && <Ficha />
+        } 
     </div>
   )
 }

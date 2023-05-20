@@ -15,7 +15,7 @@ import { Context } from '../../context/Context';
             <div className="fondo-agregar"></div>
             <div className='modal-agregar'>
                 <div className='flex-container-consulta'>
-                    <h2>Consulta médica</h2>
+                    <h2>Agregar consulta médica</h2>
                     <button onClick={ () => setAddModalIsOpen(false)}>x</button>
                 </div>
                 
