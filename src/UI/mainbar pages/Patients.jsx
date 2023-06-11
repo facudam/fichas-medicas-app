@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import { useContext, useEffect } from 'react'
 import { Context } from '../../context/Context';
 import '../../UI styles/Patients.css';
 import { PatientSearch } from '../components/PatientSearch';
@@ -9,7 +9,9 @@ import { Ficha } from '../modales/Ficha';
 
 export const Patients = () => {
 
-  const { state, fichaIsOpen } = useContext(Context);
+  const { state, fichaIsOpen, setIsUpdatingDataActive } = useContext(Context);
+
+  useEffect(() => { setIsUpdatingDataActive(false) }, [])
 
   return (
     <div className='pacientes-page'>

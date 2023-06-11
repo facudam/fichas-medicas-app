@@ -1,4 +1,4 @@
-import { useContext } from 'react';
+import { useContext, useEffect } from 'react';
 import { Context } from '../../context/Context';
 import '../../UI styles/AddNewPatient.css';
 import { ModalError } from '../modales/ModalError';
@@ -6,9 +6,41 @@ import { ModalSuccess } from '../modales/ModalSuccess';
 
 export const AddNewPatient = () => {
 
-  const {  addPatient, nombre, apellido, dni, edad, handleApellido, handleDni, handleEdad, handleName, telefono, handleTelefono, email, handleEmail } = useContext(Context)
+  const {  addPatient, nombre, setNombre, apellido, setApellido,  dni, setDni,  edad, setEdad, handleApellido, handleDni, handleEdad, handleName, telefono, setTelefono, handleTelefono, email, setEmail, handleEmail, currentPatient, isUpdatingDataActive, setIsUpdatingDataActive, updatePatientData } = useContext(Context)
 
+  useEffect(() => {
+    if (isUpdatingDataActive) {
+      setApellido(currentPatient[0].apellido)
+      setDni(currentPatient[0].dni)
+      setEdad(currentPatient[0].edad)
+      setEmail(currentPatient[0].email)
+      setNombre(currentPatient[0].nombre)
+      setTelefono(currentPatient[0].telefono)
+    } else {
+      setApellido('')
+      setDni('')
+      setEdad('')
+      setEmail('')
+      setNombre('')
+      setTelefono('')
+    }
+  }, [])
 
+  const handlePatientState = (e) => {
+    e.preventDefault()
+    if (isUpdatingDataActive) {
+      currentPatient[0].nombre = nombre;
+      currentPatient[0].apellido = apellido;
+      currentPatient[0].edad = edad;
+      currentPatient[0].dni = dni;
+      currentPatient[0].telefono = telefono;
+      currentPatient[0].email = email;
+      const dataActualizada = currentPatient[0];
+      updatePatientData(dataActualizada)
+    } else {
+      addPatient(e)
+    }
+  }
   return (
     <section className="add-page">
       <div className='add-page-main'>
@@ -42,11 +74,11 @@ export const AddNewPatient = () => {
           <button 
             className= {`btn-ficha button`}
             type='submit'
-            onClick={ addPatient }
-          >Añadir</button>
+            onClick={ handlePatientState }
+          >{ isUpdatingDataActive ? 'Modificar' : 'Añadir'}</button>
         </form>
 
-        <ModalSuccess mensaje={'¡Paciente añadido correctamente!'} />
+        <ModalSuccess mensaje={ isUpdatingDataActive ? '¡Datos modificados correctamente!' :'¡Paciente añadido correctamente!'} />
         <ModalError />
       
       </div>

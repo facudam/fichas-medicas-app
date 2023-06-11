@@ -6,6 +6,7 @@ import user from '../user.jpg';
 
 
 export const Sidebar = () => {
+
   const location = useLocation();
 
   return (

@@ -36,7 +36,7 @@ export const ContextProvider = ({ children }) => {
     const [ fichaIsOpen, setFichaIsOpen ] = useState(false)
     const [ datosConsultaIncompletos, setDatosConsultaIncompletos ] = useState(false)
 
-    
+    const [ isUpdatingDataActive, setIsUpdatingDataActive ] = useState(false)
 
 
     //Declaramos las funciones con sus respectivos setState para tomar los datos ingresados:
@@ -128,7 +128,11 @@ export const ContextProvider = ({ children }) => {
 
                 )
                 return state
-                
+            
+                case PatientActions.UPDATE_DATA:
+                    const pacienteEdit = action.payload;
+                    setModalIsOpen(true)
+                    return state.map(paciente => paciente.dni === pacienteEdit.dni ? pacienteEdit : paciente )
 
             default:
                 return state;
@@ -198,12 +202,20 @@ export const ContextProvider = ({ children }) => {
         
     }
 
+    const updatePatientData = (patientData) => {
+        const dataUpdated = patientData;
+        dispatch({
+            type: PatientActions.UPDATE_DATA,
+            payload: dataUpdated
+        })
+    }
+
 
     const [ state, dispatch ] = useReducer( patientsReducer, initialState );
 
 
     return(
-        <Context.Provider  value={{ state, addPatient, nombre, apellido, dni, edad, telefono, email, handleTelefono, handleApellido, handleDni, handleEdad, handleName, handleEmail, modalIsOpen, setModalIsOpen, errorModalIsOpen, setErrorModalIsOpen, deletePatient, confirmationModalIsOpen, setConfirmationModalIsOpen, currentPatient, setCurrentPatient, addModalIsOpen, setAddModalIsOpen, fecha, padecimiento, setPadecimiento, tratamiento, setTratamiento, notas, setNotas, handleFecha, handlePadecimiento, handleTratamiento, handleNotas, addConsulta, filtrar, setFiltrar, searchPatient, mensajeModal,fichaIsOpen, setFichaIsOpen, datosConsultaIncompletos, setDatosConsultaIncompletos }} >
+        <Context.Provider  value={{ state, addPatient, nombre, apellido, dni, edad, telefono, email, handleTelefono, handleApellido, handleDni, handleEdad, handleName, handleEmail, modalIsOpen, setModalIsOpen, errorModalIsOpen, setErrorModalIsOpen, deletePatient, updatePatientData, confirmationModalIsOpen, setConfirmationModalIsOpen, currentPatient, setCurrentPatient, addModalIsOpen, setAddModalIsOpen, fecha, padecimiento, setPadecimiento, tratamiento, setTratamiento, notas, setNotas, handleFecha, handlePadecimiento, handleTratamiento, handleNotas, addConsulta, filtrar, setFiltrar, searchPatient, mensajeModal,fichaIsOpen, setFichaIsOpen, datosConsultaIncompletos, setDatosConsultaIncompletos, isUpdatingDataActive, setIsUpdatingDataActive, setNombre, setApellido, setEdad, setDni, setTelefono, setEmail }} >
             { children }
         </Context.Provider>
     )
