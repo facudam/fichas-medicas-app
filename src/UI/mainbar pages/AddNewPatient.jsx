@@ -46,7 +46,7 @@ export const AddNewPatient = () => {
     <section className="add-page">
       <div className='add-page-main'>
         <form className='datos-personales-container'>
-          <h1>Registro de Nuevo Paciente</h1>
+          <h1>{isUpdatingDataActive ? 'Paciente ya ingresado al sistema' : 'Registro de Nuevo Paciente'}</h1>
           <div className='flex-container'>
             <div className='flex-container__box'>
               <label className='label' htmlFor='nombre'>Nombre: <span className='obligatorio'>*</span> </label>
