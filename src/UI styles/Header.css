@@ -3,6 +3,7 @@ header {
     padding: 0px 35px;
     grid-area: header;
     display: flex;
+    background-color: rgb(40,51,66);;
 }
 
 .header {
@@ -19,8 +20,7 @@ header {
 .header__div-name {
     font-size: 14px;
     font-weight: 900;
-    color: rgb(0, 0, 0);
-    
+    color: #fff;
 }
 
 .header__div-name span {
