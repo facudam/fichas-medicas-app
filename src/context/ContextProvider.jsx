@@ -131,7 +131,6 @@ export const ContextProvider = ({ children }) => {
             
                 case PatientActions.UPDATE_DATA:
                     const pacienteEdit = action.payload;
-                    setModalIsOpen(true)
                     return state.map(paciente => paciente.dni === pacienteEdit.dni ? pacienteEdit : paciente )
 
             default:

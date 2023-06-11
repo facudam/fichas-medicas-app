@@ -6,7 +6,7 @@ import { ModalSuccess } from '../modales/ModalSuccess';
 
 export const AddNewPatient = () => {
 
-  const {  addPatient, nombre, setNombre, apellido, setApellido,  dni, setDni,  edad, setEdad, handleApellido, handleDni, handleEdad, handleName, telefono, setTelefono, handleTelefono, email, setEmail, handleEmail, currentPatient, isUpdatingDataActive, setIsUpdatingDataActive, updatePatientData } = useContext(Context)
+  const {  addPatient, nombre, setNombre, apellido, setApellido,  dni, setDni,  edad, setEdad, handleApellido, handleDni, handleEdad, handleName, telefono, setTelefono, handleTelefono, email, setEmail, handleEmail, currentPatient, isUpdatingDataActive, setIsUpdatingDataActive, updatePatientData, setModalIsOpen } = useContext(Context)
 
   useEffect(() => {
     if (isUpdatingDataActive) {
@@ -24,11 +24,12 @@ export const AddNewPatient = () => {
       setNombre('')
       setTelefono('')
     }
-  }, [])
+  }, [ isUpdatingDataActive ])
 
   const handlePatientState = (e) => {
     e.preventDefault()
     if (isUpdatingDataActive) {
+      setModalIsOpen(true)
       currentPatient[0].nombre = nombre;
       currentPatient[0].apellido = apellido;
       currentPatient[0].edad = edad;

@@ -62,7 +62,16 @@
 }
 
 .ficha-info__datos {
+    display: flex;
+    flex-direction: column;
     padding: 20px 25px;
+}
+
+.ficha-info__datos > button {
+    margin-top: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+    align-self: flex-end;
 }
 
 .no-consultas {
