@@ -103,6 +103,12 @@
     .label {
         font-size: 15px;
     }
+    .input {
+        font-size: 14px;
+    }
+    .input::placeholder {
+        font-size: 14px;
+    }
 }
 
 

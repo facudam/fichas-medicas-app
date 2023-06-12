@@ -101,3 +101,28 @@
         display: none;
     }
 }
+
+@media  screen and (max-width: 800px) {
+    .ficha-header > h2 {
+        font-size: 18px;
+    }
+    .ficha-header > button {
+        font-size: 12px;
+        padding: 1px 7px;
+    }
+    .ficha h3 {
+        font-size: 16px;
+        margin-bottom: 5px;
+    }
+    
+    .ficha-info__datos p {
+        font-size: 14px;
+    }
+    .no-consultas {
+        font-size: 12px;
+    }
+    .ficha-info__datos > button {
+        font-size: 12px;
+        padding: 2px 5px;
+    }
+}

@@ -119,18 +119,15 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    flex-wrap: nowrap;
+    margin-bottom: 10px;
 }
 
 .flex-container-consulta h2 {
     text-align: center;
-    width: 90%;
-    padding-left: 10%;
     font-size: 25px;
-    
-    text-shadow: 1px 1px 1px #000;
     font-weight: 400;
-    margin-bottom: 20px;
+    align-self: center;
+    flex-grow: 2;
 }
 
 .flex-container-consulta button {
@@ -143,6 +140,7 @@
     color: #fff;
     cursor: pointer;
     border-radius: 5px;
+    align-self: self-end;
     transition: all .3s ease;
 }
 
@@ -285,3 +283,41 @@
     background-color: #800000;
 }
 
+@media screen and (max-width: 800px) {
+    .modal img {
+        width: 60px;
+    }
+    .modal-p {
+        font-size: 14px;
+    }
+
+    .modal-agregar .datos-faltantes {
+        font-size: 12px;
+    }
+    .modal-agregar p {
+        font-size: 14px;
+    }
+    .flex-container-consulta h2 {
+        font-size: 18px;
+    }
+    .form-modal label {
+        font-size: 12px;
+    }
+    
+    .form-modal textarea {
+        font-size: 12px;
+    }
+   
+    
+    .form-modal button {
+        font-size: 12px;
+    }
+
+    .confirmation-modal p {
+        font-size: 14px;
+    }
+    .btn-container button {
+        font-size: 12px;
+        padding: 5px;
+    }
+}
