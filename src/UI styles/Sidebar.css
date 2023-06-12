@@ -5,7 +5,7 @@
     flex-direction: column;
     padding: 50px 0px;
     background-color: rgb(40,51,66);
-    min-height: 100vh;
+    min-height: calc(100vh - 70px);
 }
 
 .admin {
@@ -59,6 +59,13 @@
     .link-activo {
         background-color: rgb(40,51,66);
         color: #fff;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .link {
+        font-size: 14px;
+        gap: 5px;
     }
 }
 

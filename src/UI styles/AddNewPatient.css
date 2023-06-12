@@ -60,7 +60,6 @@
     margin-bottom: 25px;
     border: none;
     border-bottom: 1px solid rgb(161, 157, 157);
-    background-color: #fff;
     transition: all .5s ease;
     font-size: 18px;
 }
@@ -94,6 +93,15 @@
     .add-page-main {
         margin: 0;
         border-radius: 0;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .datos-personales-container h1 {
+        font-size: 22px;
+    }
+    .label {
+        font-size: 15px;
     }
 }
 
