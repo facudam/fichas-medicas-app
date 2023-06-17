@@ -14,7 +14,7 @@
     display: flex;
     justify-content: start;
     align-items: center;
-    gap: 10px;
+    gap: 20px;
     margin-bottom: 25px;
     color: #fff;
 }
@@ -59,6 +59,15 @@
     .link-activo {
         background-color: rgb(40,51,66);
         color: #fff;
+    }
+}
+
+@media screen and (max-width: 1450px) {
+    .admin > p {
+        font-size: 14px;
+    }
+    .link {
+        font-size: 16px;
     }
 }
 

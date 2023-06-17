@@ -36,6 +36,16 @@ body {
    ;
 }
 
+@media screen and (max-width: 1450px) {
+  .body-app {
+    grid-template:
+   "header main" 70px
+   "sidebar main " 1fr /
+   245px
+   ;
+  }
+}
+
 @media screen and (max-width: 1200px) {
   .body-app {
     grid-template:
